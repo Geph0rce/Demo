@@ -1,0 +1,104 @@
+//
+//  RFTableViewController.m
+//  demo
+//
+//  Created by qianjie on 2017/11/30.
+//  Copyright © 2017年 Zen. All rights reserved.
+//
+
+#import "RFTableModel.h"
+#import "RFTableViewController.h"
+
+static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
+
+@interface RFTableViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray <RFTableModel *> *rowsArray;
+
+@end
+
+@implementation RFTableViewController
+
+- (void)dealloc {
+    DLog(@"dealloc");
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"functions";
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+    }];
+    [self reloadData];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+}
+
+#pragma mark - reloadData
+
+- (void)reloadData {
+    [self.tableView reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.rowsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RFTableModel *model = self.rowsArray[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRFTableViewCellId];
+    cell.textLabel.text = model.title;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RFTableModel *model = self.rowsArray[indexPath.row];
+    guard (model.className.length > 0) else {
+        DLog(@"className is nil");
+        return;
+    }
+    
+    Class controllerClass = NSClassFromString(model.className);
+    UIViewController *controller = (UIViewController *)[[controllerClass alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+
+}
+
+#pragma mark - getters
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.rowHeight = 44.0;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kRFTableViewCellId];
+    }
+    return _tableView;
+}
+
+- (NSArray <RFTableModel *> *)rowsArray {
+    if (!_rowsArray) {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        RFTableModel *handleModel = [[RFTableModel alloc] init];
+        handleModel.title = @"shimmer handle";
+        handleModel.className = @"RFHandleViewController";
+        [array addObject:handleModel];
+        
+        RFTableModel *realmModel = [[RFTableModel alloc] init];
+        realmModel.title = @"realm controller";
+        realmModel.className = @"RFRealmViewController";
+        [array addObject:realmModel];
+        
+        _rowsArray = [array copy];
+    }
+    return _rowsArray;
+}
+
+@end
