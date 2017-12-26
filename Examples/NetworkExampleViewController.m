@@ -16,14 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self upload:@"http://logger-uat.crfchina.com/common-api/ubt/log" image:[UIImage imageNamed:@"example.jpg"] progress:^(NSProgress * _Nonnull uploadProgress) {
+    UIImage *image = [UIImage imageNamed:@"example.jpg"];
+    [self upload:@"http://logger-uat.crfchina.com/common-api/ubt/log" imageData:UIImageJPEGRepresentation(image, 1.0) progress:^(NSProgress * _Nonnull uploadProgress) {
         DLog(@"progress: %@", [uploadProgress description]);
     } complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
-        
         DLog(@"status code: %@", @(statusCode));
     }];
-    
 }
 
 

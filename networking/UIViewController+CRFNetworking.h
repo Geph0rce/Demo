@@ -43,11 +43,11 @@ typedef NS_ENUM(NSInteger, CRFNetworingInterceptType) {
  Upload image with jpeg format
  
  @param url, upload url
- @param image, UIImage
+ @param image, jpeg image data
  @param progress, a block to handle upload progress
  @param complete, a block to handle response
  */
-- (void)upload:(NSString *)url image:(UIImage *)image progress:(nullable RFNetworkProgressBlock)progress complete:(nullable RFNetworkCompleteBlock)complete;
+- (void)upload:(NSString *)url imageData:(NSData *)image progress:(nullable RFNetworkProgressBlock)progress complete:(nullable RFNetworkCompleteBlock)complete;
 
 
 /**
