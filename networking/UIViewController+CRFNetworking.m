@@ -85,7 +85,8 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
 
 }
 
-- (void)upload:(NSString *)url imageData:(NSData *)data progress:(nullable RFNetworkProgressBlock)progress complete:(nullable RFNetworkCompleteBlock)complete {
+- (void)upload:(NSString *)url image:(UIImage *)image progress:(nullable RFNetworkProgressBlock)progress complete:(nullable RFNetworkCompleteBlock)complete; {
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
     [self.crf_networkManager upload:url imageData:data progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);

@@ -26,6 +26,7 @@ PODS:
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
+  - Yoga (1.6.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - RFFoundation
   - RFTypeface
   - SDWebImage
+  - Yoga
   - YYModel
 
 SPEC CHECKSUMS:
@@ -44,8 +46,9 @@ SPEC CHECKSUMS:
   RFFoundation: 9c10f17a70521341c0fae0e7cb65d9ed08ffb451
   RFTypeface: 29c527c76ee5ce363bc414beb518f44ac0b6ab65
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5a6963ced65ec1f533c808c2c5c82df6a1352466
+PODFILE CHECKSUM: 742b844d398e8251a9108c2708851ba313308261
 
 COCOAPODS: 1.3.1

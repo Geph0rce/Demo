@@ -16,6 +16,8 @@
 		167F4E501FE7D7820020C394 /* UIViewController+CRFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 167F4E4F1FE7D7820020C394 /* UIViewController+CRFNetworking.m */; };
 		16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953C1FF10E93002866C9 /* UIView+RFCorner.m */; };
 		16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953F1FF11165002866C9 /* UIView+RFLayout.m */; };
+		16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955A1FF231D3002866C9 /* UIView+Yoga.m */; };
+		16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955D1FF231D3002866C9 /* YGLayout.m */; };
 		18B5CAF81EC73869008BBA18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAF71EC73869008BBA18 /* main.m */; };
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
@@ -44,6 +46,11 @@
 		16FB953C1FF10E93002866C9 /* UIView+RFCorner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RFCorner.m"; sourceTree = "<group>"; };
 		16FB953E1FF11165002866C9 /* UIView+RFLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RFLayout.h"; sourceTree = "<group>"; };
 		16FB953F1FF11165002866C9 /* UIView+RFLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RFLayout.m"; sourceTree = "<group>"; };
+		16FB95591FF231D3002866C9 /* UIView+Yoga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Yoga.h"; sourceTree = "<group>"; };
+		16FB955A1FF231D3002866C9 /* UIView+Yoga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Yoga.m"; sourceTree = "<group>"; };
+		16FB955B1FF231D3002866C9 /* YGLayout+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
+		16FB955C1FF231D3002866C9 /* YGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
+		16FB955D1FF231D3002866C9 /* YGLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
 		18B5CAF31EC73869008BBA18 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B5CAF71EC73869008BBA18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B5CAF91EC73869008BBA18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,9 +102,22 @@
 			path = category;
 			sourceTree = "<group>";
 		};
+		16FB95581FF231D3002866C9 /* YogaKit */ = {
+			isa = PBXGroup;
+			children = (
+				16FB95591FF231D3002866C9 /* UIView+Yoga.h */,
+				16FB955A1FF231D3002866C9 /* UIView+Yoga.m */,
+				16FB955B1FF231D3002866C9 /* YGLayout+Private.h */,
+				16FB955C1FF231D3002866C9 /* YGLayout.h */,
+				16FB955D1FF231D3002866C9 /* YGLayout.m */,
+			);
+			path = YogaKit;
+			sourceTree = "<group>";
+		};
 		18B5CAEA1EC73869008BBA18 = {
 			isa = PBXGroup;
 			children = (
+				16FB95581FF231D3002866C9 /* YogaKit */,
 				16FB953A1FF10E73002866C9 /* category */,
 				18B5CAF51EC73869008BBA18 /* demo */,
 				1641B8521FCD0DB000A46AFB /* networking */,
@@ -242,6 +262,7 @@
 				"${BUILT_PRODUCTS_DIR}/RFTypeface/RFTypeface.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -252,6 +273,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFTypeface.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -298,6 +320,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */,
+				16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */,
 				164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */,
 				1641B8591FCD2F8600A46AFB /* RFNetworkManager.m in Sources */,
 				164D38931FCFD3AB00C886CF /* RFTableViewController.m in Sources */,
