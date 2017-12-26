@@ -41,6 +41,16 @@ typedef void (^RFNetworkProgressBlock) (NSProgress * _Nonnull uploadProgress);
 
 
 /**
+ POST with progress
+
+ @param url
+ @param params
+ @param progress
+ @param complete handle response
+ */
+- (void)post:(NSString *)url params:(NSDictionary *)params progress:(RFNetworkProgressBlock)progress complete:(RFNetworkCompleteBlock)complete;
+
+/**
  Upload image with jpeg format
 
  @param url, upload url

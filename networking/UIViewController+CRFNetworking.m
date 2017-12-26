@@ -120,6 +120,38 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
 #pragma mark - Token Stuff
 
 - (void)refreshToken:(RFNetworkCompleteBlock)complete {
+// request
+//        "clientInfo": {
+//            "androidID": "string",
+//            "appVersion": "string",
+//            "blackBox": "string",
+//            "clientId": "string",
+//            "deviceId": "string",
+//            "gps": "string",
+//            "idfa": "string",
+//            "imei": "string",
+//            "latitude": "string",
+//            "locationAddr": "string",
+//            "loginChannel": "string",
+//            "longitude": "string",
+//            "mac": "string",
+//            "model": "string",
+//            "os": "string",
+//            "vua": "string"
+//        },
+//        "refreshToken": "string"
+  
+// response
+//    {
+//        "accessToken": "string",
+//        "ctUserId": "string",
+//        "kissoId": "string",
+//        "pageTag": "string",
+//        "refreshToken": "string",
+//        "status": 0,
+//        "type": 0
+//    }
+    
     [self.crf_networkManager cancel:CRFNetworkingRefreshTokenURL];
     [self.crf_networkManager post:CRFNetworkingRefreshTokenURL params:nil complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
         //TODO: handle token response, refresh local token

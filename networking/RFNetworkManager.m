@@ -54,6 +54,10 @@ static NSString *const kRFNetworkManagerErrorDomain = @"com.crf.rfnetworkmanager
 }
 
 - (void)post:(NSString *)url params:(NSDictionary *)params complete:(RFNetworkCompleteBlock)complete {
+    [self post:url params:params progress:nil complete:complete];
+}
+
+- (void)post:(NSString *)url params:(NSDictionary *)params progress:(RFNetworkProgressBlock)progress complete:(RFNetworkCompleteBlock)complete {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
     securityPolicy.allowInvalidCertificates = YES;
