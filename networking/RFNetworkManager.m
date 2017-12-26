@@ -97,22 +97,38 @@ static NSString *const kRFNetworkManagerErrorDomain = @"com.crf.rfnetworkmanager
         return;
     }
     
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:data name:@"file" fileName:@"filename.jpg" mimeType:@"image/jpeg"];
-    } error:nil];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    NSURLSessionUploadTask *uploadTask = [manager
-                  uploadTaskWithStreamedRequest:request
-                  progress:^(NSProgress * _Nonnull uploadProgress) {
-                      if (progress) {
-                          progress(uploadProgress);
-                      }
-                  }
-                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                      
-                  }];
-    [self addTask:uploadTask url:url];
+    NSURLSessionDataTask *task = [manager POST:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", @([[NSDate date] timeIntervalSince1970])];
+        [formData appendPartWithFileData:data name:@"file" fileName:fileName mimeType:@"image/jpeg"];
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSInteger statusCode = [(NSHTTPURLResponse *)(task.response)  statusCode];
+        [self removeTask:task];
+        guard (complete) else {
+            NSLog(@"upload (%@) success without handler", url);
+            return;
+        }
+        complete(responseObject, statusCode, nil);
+
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSInteger statusCode = [(NSHTTPURLResponse *)(task.response)  statusCode];
+        [self removeTask:task];
+        guard (complete) else {
+            NSLog(@"upload (%@) failure without handler", url);
+            return;
+        }
+        complete(nil, statusCode, error);
+
+    }];
+    [self addTask:task url:url];
 }
 
 - (void)cancel:(NSString *)url {

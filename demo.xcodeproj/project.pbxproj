@@ -18,6 +18,8 @@
 		16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953F1FF11165002866C9 /* UIView+RFLayout.m */; };
 		16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955A1FF231D3002866C9 /* UIView+Yoga.m */; };
 		16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955D1FF231D3002866C9 /* YGLayout.m */; };
+		16FB95631FF232C9002866C9 /* NetworkExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */; };
+		16FB95651FF2418C002866C9 /* example.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16FB95641FF2418B002866C9 /* example.jpg */; };
 		18B5CAF81EC73869008BBA18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAF71EC73869008BBA18 /* main.m */; };
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
@@ -51,6 +53,9 @@
 		16FB955B1FF231D3002866C9 /* YGLayout+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
 		16FB955C1FF231D3002866C9 /* YGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
 		16FB955D1FF231D3002866C9 /* YGLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
+		16FB95611FF232C9002866C9 /* NetworkExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkExampleViewController.h; sourceTree = "<group>"; };
+		16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkExampleViewController.m; sourceTree = "<group>"; };
+		16FB95641FF2418B002866C9 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
 		18B5CAF31EC73869008BBA18 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B5CAF71EC73869008BBA18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B5CAF91EC73869008BBA18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,7 +96,7 @@
 			path = networking;
 			sourceTree = "<group>";
 		};
-		16FB953A1FF10E73002866C9 /* category */ = {
+		16FB953A1FF10E73002866C9 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				16FB953B1FF10E93002866C9 /* UIView+RFCorner.h */,
@@ -99,7 +104,7 @@
 				16FB953E1FF11165002866C9 /* UIView+RFLayout.h */,
 				16FB953F1FF11165002866C9 /* UIView+RFLayout.m */,
 			);
-			path = category;
+			path = Category;
 			sourceTree = "<group>";
 		};
 		16FB95581FF231D3002866C9 /* YogaKit */ = {
@@ -114,12 +119,22 @@
 			path = YogaKit;
 			sourceTree = "<group>";
 		};
+		16FB95601FF232AA002866C9 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				16FB95611FF232C9002866C9 /* NetworkExampleViewController.h */,
+				16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		18B5CAEA1EC73869008BBA18 = {
 			isa = PBXGroup;
 			children = (
+				16FB95601FF232AA002866C9 /* Examples */,
 				16FB95581FF231D3002866C9 /* YogaKit */,
-				16FB953A1FF10E73002866C9 /* category */,
-				18B5CAF51EC73869008BBA18 /* demo */,
+				16FB953A1FF10E73002866C9 /* Category */,
+				18B5CAF51EC73869008BBA18 /* Demo */,
 				1641B8521FCD0DB000A46AFB /* networking */,
 				18B5CAF41EC73869008BBA18 /* Products */,
 				9814EE4487A0E5A7379C0C07 /* Pods */,
@@ -135,7 +150,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18B5CAF51EC73869008BBA18 /* demo */ = {
+		18B5CAF51EC73869008BBA18 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				18B5CAF91EC73869008BBA18 /* AppDelegate.h */,
@@ -150,12 +165,13 @@
 				18B5CB071EC73869008BBA18 /* Info.plist */,
 				18B5CAF61EC73869008BBA18 /* Supporting Files */,
 			);
-			path = demo;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		18B5CAF61EC73869008BBA18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16FB95641FF2418B002866C9 /* example.jpg */,
 				18B5CAF71EC73869008BBA18 /* main.m */,
 				164D388A1FCFD23B00C886CF /* demo-pch.h */,
 			);
@@ -241,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FB95651FF2418C002866C9 /* example.jpg in Resources */,
 				18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FB95631FF232C9002866C9 /* NetworkExampleViewController.m in Sources */,
 				16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */,
 				16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */,
 				164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */,

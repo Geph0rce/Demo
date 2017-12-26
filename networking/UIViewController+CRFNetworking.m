@@ -102,6 +102,10 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
             }];
             return;
          }
+        
+        if (complete) {
+            complete(response, statusCode, error);
+        }
     }];
 }
 
