@@ -13,9 +13,13 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.crf.com";
 
 @interface CRFTokenUtil ()
 
+@property (nonatomic, strong) RFNetworkManager *manager;
+
 @end
 
 @implementation CRFTokenUtil
+
+RFSingleton(CRFTokenUtil);
 
 - (void)refreshToken:(RFNetworkCompleteBlock)complete {
     // request
@@ -39,22 +43,14 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.crf.com";
     //        },
     //        "refreshToken": "string"
     
-    // response
-    //    {
-    //        "accessToken": "string",
-    //        "ctUserId": "string",
-    //        "kissoId": "string",
-    //        "pageTag": "string",
-    //        "refreshToken": "string",
-    //        "status": 0,
-    //        "type": 0
-    //    }
-    RFNetworkManager *manager = [[RFNetworkManager alloc] init];
-    [manager cancel:CRFNetworkingRefreshTokenURL];
-    [manager post:CRFNetworkingRefreshTokenURL params:nil complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
-        //TODO: handle token response, refresh local token
+    self.manager = [[RFNetworkManager alloc] init];
+    [self.manager cancel:CRFNetworkingRefreshTokenURL];
+    [self.manager post:CRFNetworkingRefreshTokenURL params:nil complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
+        if (response && [response isKindOfClass:[NSDictionary class]]) {
+            self.model = [CRFTokenModel yy_modelWithDictionary:response];
+        }
         if (complete) {
-            complete(response, statusCode, error);
+            complete(self.model, statusCode, error);
         }
     }];
 }

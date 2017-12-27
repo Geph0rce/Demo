@@ -29,8 +29,10 @@ static NSString *const kRFNetworkManagerErrorDomain = @"com.crf.rfnetworkmanager
     securityPolicy.allowInvalidCertificates = YES;
     securityPolicy.validatesDomainName = NO;
     manager.securityPolicy = securityPolicy;
-    manager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
-    [manager.requestSerializer setValue:@"iOS" forHTTPHeaderField:@"User-Agent"];
+    AFJSONRequestSerializer *requestSerializer = [[AFJSONRequestSerializer alloc] init];
+    requestSerializer.timeoutInterval = 30;
+    [requestSerializer setValue:@"iOS" forHTTPHeaderField:@"User-Agent"];
+    manager.requestSerializer = requestSerializer;
     manager.responseSerializer = [[AFJSONResponseSerializer alloc] init];
     NSURLSessionDataTask *task = [manager GET:url parameters:params progress:NULL success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSInteger statusCode = [(NSHTTPURLResponse *)(task.response)  statusCode];
