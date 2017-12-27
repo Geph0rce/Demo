@@ -45,8 +45,8 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
     [self.tableView reloadData];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.rowsArray.count;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return  self.rowsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,15 +87,9 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
     if (!_rowsArray) {
         NSMutableArray *array = [[NSMutableArray alloc] init];
         RFTableModel *handleModel = [[RFTableModel alloc] init];
-        handleModel.title = @"shimmer handle";
-        handleModel.className = @"RFHandleViewController";
+        handleModel.title = @"NetworkExampleViewController";
+        handleModel.className = @"NetworkExampleViewController";
         [array addObject:handleModel];
-        
-        RFTableModel *realmModel = [[RFTableModel alloc] init];
-        realmModel.title = @"realm controller";
-        realmModel.className = @"RFRealmViewController";
-        [array addObject:realmModel];
-        
         _rowsArray = [array copy];
     }
     return _rowsArray;
