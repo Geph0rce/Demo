@@ -27,6 +27,7 @@
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
 		CAFAAC2D0A5E8D7F256317BB /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */; };
+		DB1BBE6C1FF5AC2B00E3F074 /* TakeScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1BBE6B1FF5AC2B00E3F074 /* TakeScreenShotViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		18B5CB071EC73869008BBA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3942A1DDF1D68C508C870464 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
+		DB1BBE6A1FF5AC2B00E3F074 /* TakeScreenShotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TakeScreenShotViewController.h; sourceTree = "<group>"; };
+		DB1BBE6B1FF5AC2B00E3F074 /* TakeScreenShotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakeScreenShotViewController.m; sourceTree = "<group>"; };
 		EB862823D1EF326D5E0EF047 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +142,8 @@
 			children = (
 				16FB95611FF232C9002866C9 /* NetworkExampleViewController.h */,
 				16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */,
+				DB1BBE6A1FF5AC2B00E3F074 /* TakeScreenShotViewController.h */,
+				DB1BBE6B1FF5AC2B00E3F074 /* TakeScreenShotViewController.m */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -245,7 +250,7 @@
 					18B5CAF21EC73869008BBA18 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = PXRM6WVFC5;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -363,6 +368,7 @@
 				16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */,
 				164D389C1FD0276A00C886CF /* UIWindow+FLEX.m in Sources */,
 				16FB956E1FF3B5CB002866C9 /* CRFTokenModel.m in Sources */,
+				DB1BBE6C1FF5AC2B00E3F074 /* TakeScreenShotViewController.m in Sources */,
 				1641B85D1FCD40FB00A46AFB /* NSString+RFNetworking.m in Sources */,
 				16FB95681FF33E3A002866C9 /* CRFClientInfo.m in Sources */,
 				167F4E501FE7D7820020C394 /* UIViewController+CRFNetworking.m in Sources */,
@@ -466,8 +472,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PXRM6WVFC5;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo/demo-pch.h";
@@ -475,8 +481,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zen.com.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "9b536493-da40-4d87-abed-cefe27109af7";
+				PROVISIONING_PROFILE_SPECIFIER = "Test Profile";
 			};
 			name = Debug;
 		};
@@ -487,7 +493,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
