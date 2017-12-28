@@ -22,30 +22,38 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.crf.com";
 RFSingleton(CRFTokenUtil);
 
 - (void)refreshToken:(RFNetworkCompleteBlock)complete {
-    // request
-    //        "clientInfo": {
-    //            "androidID": "string",
-    //            "appVersion": "string",
-    //            "blackBox": "string",
-    //            "clientId": "string",
-    //            "deviceId": "string",
-    //            "gps": "string",
-    //            "idfa": "string",
-    //            "imei": "string",
-    //            "latitude": "string",
-    //            "locationAddr": "string",
-    //            "loginChannel": "string",
-    //            "longitude": "string",
-    //            "mac": "string",
-    //            "model": "string",
-    //            "os": "string",
-    //            "vua": "string"
-    //        },
-    //        "refreshToken": "string"
+    
+    NSMutableDictionary *refreshParams = [[NSMutableDictionary alloc] init];
+//    UserInfo *userInfo = [SettingData getCurrentAccountInfo];
+//    ClientInfo *clientInfo = [SettingData getClientInfo];
+//    NSDictionary *params = @{
+//                             @"account" : NilSafe(userInfo.phone),
+//                             @"refreshToken" : NilSafe(userInfo.refreshToken),
+//                             @"accessToken" : NilSafe(userInfo.accessToken)
+//                            };
+//    
+//    NSDictionary *clientInfo = @{
+//                                 @"appVersion" : NilSafe(clientInfo.versionCode),
+//                                 @"deviceId" : NilSafe(clientInfo.imei),
+//                                 @"latitude" : [NSString stringWithFormat:@"%f",clientInfo.location.latitude],
+//                                 @"longitude" : [NSString stringWithFormat:@"%f",clientInfo.location.longitude],
+//                                 @"loginChannel" : @"crfapp",
+//                                 @"vua" : @"user-agent",
+//                                 @"mac" : NilSafe(clientInfo.mac),
+//                                 @"model" : NilSafe(clientInfo.device),
+//                                 @"androidID" : @"",
+//                                 @"idfa" : NilSafe(clientInfo.idfa),
+//                                 @"imei" : NilSafe(clientInfo.imei),
+//                                 @"os" : NilSafe(clientInfo.os),
+//                                 @"clientId" : NilSafe(clientInfo.clientId)
+//                                 };
+//    
+//    [refreshParams addEntriesFromDictionary:params];
+//    [refreshParams addEntriesFromDictionary:@{ @"clientInfo" : clientInfo}];
     
     self.manager = [[RFNetworkManager alloc] init];
     [self.manager cancel:CRFNetworkingRefreshTokenURL];
-    [self.manager post:CRFNetworkingRefreshTokenURL params:nil complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
+    [self.manager post:CRFNetworkingRefreshTokenURL params:refreshParams complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
         if (response && [response isKindOfClass:[NSDictionary class]]) {
             self.model = [CRFTokenModel yy_modelWithDictionary:response];
         }
