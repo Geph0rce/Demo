@@ -23,7 +23,7 @@
 // guard
 #define guard(condition) if (condition) {}
 
-#define NilSafe(string) (string ?: @"");
+#define NilSafe(string) (string ?: @"")
 
 
 #endif
