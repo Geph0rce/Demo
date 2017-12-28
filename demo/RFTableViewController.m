@@ -90,6 +90,10 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         handleModel.title = @"NetworkExampleViewController";
         handleModel.className = @"NetworkExampleViewController";
         [array addObject:handleModel];
+        RFTableModel *screenModel = [[RFTableModel alloc] init];
+        screenModel.title = @"TakeScreenShotViewController";
+        screenModel.className = @"TakeScreenShotViewController";
+        [array addObject:screenModel];
         _rowsArray = [array copy];
     }
     return _rowsArray;
