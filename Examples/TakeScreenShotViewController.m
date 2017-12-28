@@ -55,8 +55,13 @@ static NSString *const kTakeScreenShotCellId = @"kTakeScreenShotCellId";
 
 #pragma mark - Utils
 
-- (void)screenShotImage {
-    
+- (UIImage *)screenShotImage {
+    UIGraphicsBeginImageContext([UIScreen mainScreen].bounds.size);
+    [[UIApplication sharedApplication].windows[0].layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+
 }
 
 #pragma mark - Getters
