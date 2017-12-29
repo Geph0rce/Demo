@@ -18,16 +18,17 @@
 		16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953F1FF11165002866C9 /* UIView+RFLayout.m */; };
 		16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955A1FF231D3002866C9 /* UIView+Yoga.m */; };
 		16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955D1FF231D3002866C9 /* YGLayout.m */; };
-		16FB95631FF232C9002866C9 /* NetworkExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */; };
 		16FB95651FF2418C002866C9 /* example.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16FB95641FF2418B002866C9 /* example.jpg */; };
 		16FB95681FF33E3A002866C9 /* CRFClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95671FF33E3A002866C9 /* CRFClientInfo.m */; };
 		16FB956B1FF3B3B6002866C9 /* CRFTokenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956A1FF3B3B6002866C9 /* CRFTokenUtil.m */; };
 		16FB956E1FF3B5CB002866C9 /* CRFTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956D1FF3B5CB002866C9 /* CRFTokenModel.m */; };
+		16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */; };
+		16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */; };
+		16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */; };
 		18B5CAF81EC73869008BBA18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAF71EC73869008BBA18 /* main.m */; };
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
 		CAFAAC2D0A5E8D7F256317BB /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */; };
-		DB1BBE6C1FF5AC2B00E3F074 /* TakeScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1BBE6B1FF5AC2B00E3F074 /* TakeScreenShotViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +58,6 @@
 		16FB955B1FF231D3002866C9 /* YGLayout+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
 		16FB955C1FF231D3002866C9 /* YGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
 		16FB955D1FF231D3002866C9 /* YGLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
-		16FB95611FF232C9002866C9 /* NetworkExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkExampleViewController.h; sourceTree = "<group>"; };
-		16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkExampleViewController.m; sourceTree = "<group>"; };
 		16FB95641FF2418B002866C9 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
 		16FB95661FF33E3A002866C9 /* CRFClientInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFClientInfo.h; sourceTree = "<group>"; };
 		16FB95671FF33E3A002866C9 /* CRFClientInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFClientInfo.m; sourceTree = "<group>"; };
@@ -66,6 +65,12 @@
 		16FB956A1FF3B3B6002866C9 /* CRFTokenUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFTokenUtil.m; sourceTree = "<group>"; };
 		16FB956C1FF3B5CB002866C9 /* CRFTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFTokenModel.h; sourceTree = "<group>"; };
 		16FB956D1FF3B5CB002866C9 /* CRFTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFTokenModel.m; sourceTree = "<group>"; };
+		16FB95701FF5E946002866C9 /* NetworkExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkExampleViewController.h; sourceTree = "<group>"; };
+		16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkExampleViewController.m; sourceTree = "<group>"; };
+		16FB95721FF5E946002866C9 /* TakeScreenShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeScreenShotViewController.h; sourceTree = "<group>"; };
+		16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeScreenShotViewController.m; sourceTree = "<group>"; };
+		16FB95771FF5E96E002866C9 /* RIFScreenShotActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIFScreenShotActionView.h; sourceTree = "<group>"; };
+		16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIFScreenShotActionView.m; sourceTree = "<group>"; };
 		18B5CAF31EC73869008BBA18 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B5CAF71EC73869008BBA18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B5CAF91EC73869008BBA18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,8 +79,6 @@
 		18B5CB071EC73869008BBA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3942A1DDF1D68C508C870464 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
-		DB1BBE6A1FF5AC2B00E3F074 /* TakeScreenShotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TakeScreenShotViewController.h; sourceTree = "<group>"; };
-		DB1BBE6B1FF5AC2B00E3F074 /* TakeScreenShotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakeScreenShotViewController.m; sourceTree = "<group>"; };
 		EB862823D1EF326D5E0EF047 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,12 +143,30 @@
 		16FB95601FF232AA002866C9 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				16FB95611FF232C9002866C9 /* NetworkExampleViewController.h */,
-				16FB95621FF232C9002866C9 /* NetworkExampleViewController.m */,
-				DB1BBE6A1FF5AC2B00E3F074 /* TakeScreenShotViewController.h */,
-				DB1BBE6B1FF5AC2B00E3F074 /* TakeScreenShotViewController.m */,
+				16FB956F1FF5E946002866C9 /* Controllers */,
+				16FB95741FF5E946002866C9 /* Views */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		16FB956F1FF5E946002866C9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				16FB95701FF5E946002866C9 /* NetworkExampleViewController.h */,
+				16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */,
+				16FB95721FF5E946002866C9 /* TakeScreenShotViewController.h */,
+				16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		16FB95741FF5E946002866C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16FB95771FF5E96E002866C9 /* RIFScreenShotActionView.h */,
+				16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		18B5CAEA1EC73869008BBA18 = {
@@ -357,19 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16FB95631FF232C9002866C9 /* NetworkExampleViewController.m in Sources */,
 				16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */,
 				16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */,
 				16FB956B1FF3B3B6002866C9 /* CRFTokenUtil.m in Sources */,
 				164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */,
+				16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */,
 				1641B8591FCD2F8600A46AFB /* RFNetworkManager.m in Sources */,
 				164D38931FCFD3AB00C886CF /* RFTableViewController.m in Sources */,
 				18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */,
 				16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */,
 				164D389C1FD0276A00C886CF /* UIWindow+FLEX.m in Sources */,
 				16FB956E1FF3B5CB002866C9 /* CRFTokenModel.m in Sources */,
-				DB1BBE6C1FF5AC2B00E3F074 /* TakeScreenShotViewController.m in Sources */,
 				1641B85D1FCD40FB00A46AFB /* NSString+RFNetworking.m in Sources */,
+				16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */,
+				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				16FB95681FF33E3A002866C9 /* CRFClientInfo.m in Sources */,
 				167F4E501FE7D7820020C394 /* UIViewController+CRFNetworking.m in Sources */,
 				18B5CAF81EC73869008BBA18 /* main.m in Sources */,

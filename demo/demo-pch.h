@@ -18,6 +18,8 @@
 #import <YYModel/YYModel.h>
 #import "RFNetworking.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIView+RFCorner.h"
+#import "UIView+RFLayout.h"
 
 #pragma mark - defines
 

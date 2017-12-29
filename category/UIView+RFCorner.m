@@ -25,4 +25,15 @@
     }
 }
 
+- (void)addCorner:(UIRectCorner)corner rect:(CGRect)rect radius:(CGFloat)radius {
+    if (CGRectGetWidth(rect) > 0 && CGRectGetHeight(rect) > 0) {
+        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+        maskLayer.frame = rect;
+        maskLayer.path = maskPath.CGPath;
+        self.layer.mask = maskLayer;
+    }
+}
+
+
 @end

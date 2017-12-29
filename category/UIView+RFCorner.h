@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (RFCorner)
 
 - (void)addCorner:(UIRectCorner)corner radius:(CGFloat)radius;
+- (void)addCorner:(UIRectCorner)corner rect:(CGRect)rect radius:(CGFloat)radius;
 
 @end
 
