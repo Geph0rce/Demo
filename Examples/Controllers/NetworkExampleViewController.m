@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     UIImage *image = [UIImage imageNamed:@"example.jpg"];
     [self upload:@"http://logger-uat.crfchina.com/common-api/ubt/log" imageData:UIImageJPEGRepresentation(image, 1.0) progress:^(NSProgress * _Nonnull uploadProgress) {
         DLog(@"progress: %@", [uploadProgress description]);

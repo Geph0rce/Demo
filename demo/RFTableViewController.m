@@ -27,6 +27,7 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"functions";
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
@@ -94,6 +95,10 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         screenModel.title = @"TakeScreenShotViewController";
         screenModel.className = @"TakeScreenShotViewController";
         [array addObject:screenModel];
+        RFTableModel *flexModel = [[RFTableModel alloc] init];
+        flexModel.title = @"FlexBoxViewController";
+        flexModel.className = @"FlexBoxViewController";
+        [array addObject:flexModel];
         _rowsArray = [array copy];
     }
     return _rowsArray;

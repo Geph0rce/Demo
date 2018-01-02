@@ -20,6 +20,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+RFCorner.h"
 #import "UIView+RFLayout.h"
+#import "UIView+Yoga.h"
 
 #pragma mark - defines
 

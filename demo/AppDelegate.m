@@ -21,6 +21,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     RFTableViewController *controller = [[RFTableViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    navigationController.navigationBar.translucent = NO;
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
