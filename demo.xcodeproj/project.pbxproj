@@ -25,6 +25,7 @@
 		16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */; };
 		16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */; };
 		16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */; };
+		1828CE471FFC7682004646E8 /* RFScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828CE461FFC7682004646E8 /* RFScreen.m */; };
 		188744171FFB52A200558889 /* FlexBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188744161FFB52A200558889 /* FlexBoxViewController.m */; };
 		18B5CAF81EC73869008BBA18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAF71EC73869008BBA18 /* main.m */; };
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
@@ -72,6 +73,8 @@
 		16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeScreenShotViewController.m; sourceTree = "<group>"; };
 		16FB95771FF5E96E002866C9 /* RIFScreenShotActionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIFScreenShotActionView.h; sourceTree = "<group>"; };
 		16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIFScreenShotActionView.m; sourceTree = "<group>"; };
+		1828CE451FFC7682004646E8 /* RFScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFScreen.h; sourceTree = "<group>"; };
+		1828CE461FFC7682004646E8 /* RFScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFScreen.m; sourceTree = "<group>"; };
 		188744151FFB52A200558889 /* FlexBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexBoxViewController.h; sourceTree = "<group>"; };
 		188744161FFB52A200558889 /* FlexBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexBoxViewController.m; sourceTree = "<group>"; };
 		18B5CAF31EC73869008BBA18 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +177,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1828CE441FFC766D004646E8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1828CE451FFC7682004646E8 /* RFScreen.h */,
+				1828CE461FFC7682004646E8 /* RFScreen.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		18B5CAEA1EC73869008BBA18 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +194,7 @@
 				16FB953A1FF10E73002866C9 /* Category */,
 				18B5CAF51EC73869008BBA18 /* Demo */,
 				1641B8521FCD0DB000A46AFB /* networking */,
+				1828CE441FFC766D004646E8 /* Utils */,
 				18B5CAF41EC73869008BBA18 /* Products */,
 				9814EE4487A0E5A7379C0C07 /* Pods */,
 				617B2CDD7251719EFD74A6B0 /* Frameworks */,
@@ -396,6 +409,7 @@
 				16FB956E1FF3B5CB002866C9 /* CRFTokenModel.m in Sources */,
 				1641B85D1FCD40FB00A46AFB /* NSString+RFNetworking.m in Sources */,
 				16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */,
+				1828CE471FFC7682004646E8 /* RFScreen.m in Sources */,
 				188744171FFB52A200558889 /* FlexBoxViewController.m in Sources */,
 				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				16FB95681FF33E3A002866C9 /* CRFClientInfo.m in Sources */,

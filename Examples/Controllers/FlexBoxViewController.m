@@ -24,11 +24,11 @@
     [self.view addSubview:contentView];
     [contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionColumn;
+        layout.flexDirection = YGFlexDirectionRow;
         layout.alignItems = YGAlignCenter;
         layout.justifyContent = YGJustifySpaceAround;
         layout.width = YGPointValue(self.view.width);
-        layout.height = YGPointValue(200.0);
+        layout.height = YGPointValue(100.0);
         layout.marginTop = YGPointValue(20.0);
     }];
 
@@ -45,7 +45,7 @@
     orengeView.backgroundColor = kRGB(232, 74, 1);
     [orengeView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
-        layout.width = YGPointValue(60.0);
+        layout.width = YGPointValue(100.0);
         layout.height = YGPointValue(60.0);
     }];
     [contentView addSubview:orengeView];
