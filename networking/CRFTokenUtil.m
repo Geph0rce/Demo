@@ -10,12 +10,15 @@
 #import "CRFTokenUtil.h"
 
 static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.crf.com";
+static NSTimeInterval const CRFNetworkingRefreshTokenDuration = 120.0;
 
 @interface CRFTokenUtil ()
 
 @property (nonatomic, strong) RFNetworkManager *manager;
 @property (nonatomic, assign) BOOL isLoading;
 @property (nonatomic, strong) NSMutableArray *operations;
+@property (nonatomic, assign) NSTimeInterval timestamp;
+
 @end
 
 @implementation CRFTokenUtil
@@ -24,6 +27,13 @@ RFSingleton(CRFTokenUtil);
 
 
 - (void)refreshToken:(RFNetworkCompleteBlock)complete {
+    
+    if (![self needToRefreshToken]) {
+        if (complete) {
+            complete(self.model, 200, nil);
+        }
+        return;
+    }
     if (complete) {
         [self.operations addObject:complete];
     }
@@ -71,8 +81,17 @@ RFSingleton(CRFTokenUtil);
             operation(self.model, statusCode, error);
         }
         [self.operations removeAllObjects];
+        self.timestamp = [[NSDate date] timeIntervalSince1970];
         self.isLoading = NO;
     }];
+}
+
+- (BOOL)needToRefreshToken {
+    NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
+    if (timeInterval - self.timestamp > CRFNetworkingRefreshTokenDuration) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - Getters
@@ -83,5 +102,6 @@ RFSingleton(CRFTokenUtil);
     }
     return _operations;
 }
+
 
 @end
