@@ -6,6 +6,7 @@
 //  Copyright © 2017年 Zen. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "RIFScreenShotActionView.h"
 #import "TakeScreenShotViewController.h"
 
@@ -35,8 +36,9 @@ static NSString *const kTakeScreenShotCellId = @"kTakeScreenShotCellId";
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(takeScreenShotAction:) name:UIApplicationUserDidTakeScreenshotNotification object:nil];
     [self.tableView reloadData];
-    UIBarButtonItem *screenShotButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"截屏" style:UIBarButtonItemStylePlain target:self action:@selector(takeScreenShot)];
-    [self.navigationItem setRightBarButtonItem:screenShotButtonItem];
+    DLog(@"after reloadData");
+    UIBarButtonItem *voiceBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"语音" style:UIBarButtonItemStylePlain target:self action:@selector(voiceAction)];
+    [self.navigationItem setRightBarButtonItem:voiceBarButtonItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,14 +49,27 @@ static NSString *const kTakeScreenShotCellId = @"kTakeScreenShotCellId";
     [super didReceiveMemoryWarning];
 }
 
+- (void)voiceAction {
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *Utterance =[AVSpeechUtterance speechUtteranceWithString:@"Hello World"];
+    Utterance.rate = 0.5f;
+    [synthesizer speakUtterance:Utterance];
+}
 
 #pragma mark - UITableViewDelegate and UITableViewDataSource
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DLog(@"heightForRowAtIndexPath");
+    return 44.0;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    DLog(@"numberOfRowsInSection");
     return self.array.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DLog(@"cellForRowAtIndexPath");
     NSString *text = self.array[indexPath.row];
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:kTakeScreenShotCellId];
     cell.textLabel.text = text;
