@@ -6,6 +6,7 @@
 //  Copyright © 2017年 apple. All rights reserved.
 //
 
+#import <UserNotifications/UserNotifications.h>
 #import "AppDelegate.h"
 #import "RFTableViewController.h"
 
@@ -24,7 +25,45 @@
     navigationController.navigationBar.translucent = NO;
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    [self registerNotification];
     return YES;
+}
+
+- (void)registerNotification {
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNAuthorizationOptions options = UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert;
+    [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            //允许
+            NSLog(@"允许注册通知");
+            [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+                NSLog(@"%@", settings);
+            }];
+            //注册
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            });
+        }else{
+            //不允许
+            NSLog(@"不允许注册通知");
+        }
+    }];
+}
+
+
+#pragma mark - Notification
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    DLog(@"device token: %@", deviceToken);
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler
+{
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

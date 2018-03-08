@@ -99,6 +99,10 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         flexModel.title = @"FlexBoxViewController";
         flexModel.className = @"FlexBoxViewController";
         [array addObject:flexModel];
+        RFTableModel *collectionModel = [[RFTableModel alloc] init];
+        collectionModel.title = @"CollectionViewExampleViewController";
+        collectionModel.className = @"CollectionViewExampleViewController";
+        [array addObject:collectionModel];
         _rowsArray = [array copy];
     }
     return _rowsArray;
