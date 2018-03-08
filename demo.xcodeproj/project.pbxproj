@@ -39,6 +39,8 @@
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
 		CAFAAC2D0A5E8D7F256317BB /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */; };
+		DB6689A92050207700497BAF /* DCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6689A82050207700497BAF /* DCollectionViewController.m */; };
+		DB71705420502C4E00B194E2 /* DCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71705320502C4E00B194E2 /* DCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,10 @@
 		18B5CB071EC73869008BBA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3942A1DDF1D68C508C870464 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
+		DB6689A72050207700497BAF /* DCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCollectionViewController.h; sourceTree = "<group>"; };
+		DB6689A82050207700497BAF /* DCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCollectionViewController.m; sourceTree = "<group>"; };
+		DB71705220502C4E00B194E2 /* DCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCollectionViewCell.h; sourceTree = "<group>"; };
+		DB71705320502C4E00B194E2 /* DCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCollectionViewCell.m; sourceTree = "<group>"; };
 		EB862823D1EF326D5E0EF047 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +242,9 @@
 				188744161FFB52A200558889 /* FlexBoxViewController.m */,
 				162AD990201584030020B15B /* CollectionViewExampleViewController.h */,
 				162AD991201584030020B15B /* CollectionViewExampleViewController.m */,
+				DB6689A72050207700497BAF /* DCollectionViewController.h */,
+				DB6689A82050207700497BAF /* DCollectionViewController.m */,
+
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,6 +258,8 @@
 				162AD994201584330020B15B /* AJKPeopleTagCell.m */,
 				162AD996201584B30020B15B /* AJKSubregionEvaluationCell.h */,
 				162AD997201584B30020B15B /* AJKSubregionEvaluationCell.m */,
+				DB71705220502C4E00B194E2 /* DCollectionViewCell.h */,
+				DB71705320502C4E00B194E2 /* DCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -554,7 +565,9 @@
 				168A0DE22015C0680020A8C0 /* AIFMasonryMacro.m in Sources */,
 				18B5CAF81EC73869008BBA18 /* main.m in Sources */,
 				1641B8601FCD424000A46AFB /* RFNetworkTask.m in Sources */,
+				DB71705420502C4E00B194E2 /* DCollectionViewCell.m in Sources */,
 				16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */,
+				DB6689A92050207700497BAF /* DCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -102,8 +102,12 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         RFTableModel *collectionModel = [[RFTableModel alloc] init];
         collectionModel.title = @"CollectionViewExampleViewController";
         collectionModel.className = @"CollectionViewExampleViewController";
+        RFTableModel *collectionModel = [[RFTableModel alloc] init];
+        collectionModel.title = @"DCollectionViewController";
+        collectionModel.className = @"DCollectionViewController";
         [array addObject:collectionModel];
         _rowsArray = [array copy];
+        
     }
     return _rowsArray;
 }
