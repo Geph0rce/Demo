@@ -106,8 +106,12 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         dcollectionModel.title = @"DCollectionViewController";
         dcollectionModel.className = @"DCollectionViewController";
         [array addObject:dcollectionModel];
-        _rowsArray = [array copy];
         
+        RFTableModel *chartModel = [[RFTableModel alloc] init];
+        chartModel.title = @"RFRadarChartViewController";
+        chartModel.className = @"RFRadarChartViewController";
+        [array addObject:chartModel];
+        _rowsArray = [array copy];
     }
     return _rowsArray;
 }
