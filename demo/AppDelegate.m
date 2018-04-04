@@ -7,10 +7,14 @@
 //
 
 #import <UserNotifications/UserNotifications.h>
+#import <CoreLocation/CoreLocation.h>
 #import "AppDelegate.h"
 #import "RFTableViewController.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate () <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *manager;
 
 @end
 
@@ -26,6 +30,8 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     [self registerNotification];
+//    [self.manager requestAlwaysAuthorization];
+  //  [self.manager startUpdatingLocation];
     return YES;
 }
 
@@ -86,6 +92,28 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    NSMutableString *coordinate = [NSMutableString string];
+    for (CLLocation *location in locations) {
+        [coordinate appendFormat:@"lng: %@ lat: %@", @(location.coordinate.longitude), @(location.coordinate.latitude)];
+    }
+    DLog(@"coordinate: %@", coordinate);
+}
+
+#pragma mark - Getters
+
+- (CLLocationManager *)manager {
+    if (!_manager) {
+        _manager = [[CLLocationManager alloc] init];
+        _manager.delegate = self;
+        _manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;//导航级别的精确度
+        _manager.allowsBackgroundLocationUpdates = YES; //允许后台刷新
+        _manager.pausesLocationUpdatesAutomatically = NO; //不允许自动暂停刷新
+        _manager.distanceFilter = kCLDistanceFilterNone;
+    }
+    return _manager;
 }
 
 @end
