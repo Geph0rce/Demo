@@ -12,6 +12,13 @@ static CGFloat const kRFRadarChartViewRadius = 30.0;
 static NSInteger const kRFRadarChartLevels = 4;
 static NSInteger const kRFRadarChartDefaultDemensions = 5;
 
+typedef NS_ENUM(NSInteger, RFRadarChartViewAlignment) {
+    RFRadarChartViewAlignmentTop = 0,
+    RFRadarChartViewAlignmentLeft,
+    RFRadarChartViewAlignmentBottom,
+    RFRadarChartViewAlignmentRight
+};
+
 @interface RFRadarChartView ()
 
 @property (nonatomic, strong) NSMutableArray *pointsArray;
@@ -49,7 +56,8 @@ static NSInteger const kRFRadarChartDefaultDemensions = 5;
     [self.titleLabels removeAllObjects];
     
     CGPoint center = CGPointMake(CGRectGetWidth(self.frame)/2.0, CGRectGetHeight(self.frame)/2.0);
-    NSArray *points = [self points:center radius:kRFRadarChartViewRadius * kRFRadarChartLevels];
+    CGFloat radius = kRFRadarChartViewRadius * kRFRadarChartLevels;
+    NSArray *points = [self points:center radius:radius];
     for (int i = 0; i < titles.count; i++) {
         UILabel *label = [[UILabel alloc] init];
         label.font = [UIFont ajkH3Font];
@@ -58,21 +66,39 @@ static NSInteger const kRFRadarChartDefaultDemensions = 5;
         [label sizeToFit];
         [self addSubview:label];
         CGPoint point = [points[i] CGPointValue];
-        
+
         // position of label
-        CGFloat margin = 6.0;
+        CGFloat dx = fabs(point.x - center.x);
+        CGFloat dy = fabs(point.y - center.y);
+        BOOL isVertical = (dy - dx >= radius/3.0);
         if (point.x > center.x && point.y < center.y) {
-            label.bottom = point.y - margin;
-            label.left = point.x + margin;
-        } else if (point.x > center.x && point.y > center.y) {
-            label.left = point.x + margin;
-            label.top = point.y + margin;
-        } else if (point.x < center.x && point.y > center.y) {
-            label.right = point.x - margin;
-            label.top = point.y + margin;
+            // 第一象限
+            if (isVertical) {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentBottom];
+            } else {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentLeft];
+            }
         } else if (point.x < center.x && point.y < center.y) {
-            label.right = point.x - margin;
-            label.bottom = point.y - margin;
+            // 第二象限
+            if (isVertical) {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentBottom];
+            } else {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentRight];
+            }
+        } else if (point.x < center.x && point.y > center.y) {
+            // 第三象限
+            if (isVertical) {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentTop];
+            } else {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentRight];
+            }
+        } else if (point.x > center.x && point.y > center.y) {
+            // 第四象限
+            if (isVertical) {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentTop];
+            } else {
+                [self align:label point:point aligment:RFRadarChartViewAlignmentLeft];
+            }
         }
     }
 }
@@ -182,18 +208,37 @@ static NSInteger const kRFRadarChartDefaultDemensions = 5;
     return points;
 }
 
+#pragma mark - align label
+
+- (void)align:(UILabel *)label point:(CGPoint)point aligment:(RFRadarChartViewAlignment)alignment {
+    CGFloat margin = 6.0;
+    if (alignment == RFRadarChartViewAlignmentLeft) {
+        label.left = point.x + margin;
+        label.top = point.y - label.height/2.0;
+    } else if (alignment == RFRadarChartViewAlignmentBottom) {
+        label.left = point.x - label.width/2.0;
+        label.bottom = point.y - margin;
+    } else if (alignment == RFRadarChartViewAlignmentRight) {
+        label.right = point.x - margin;
+        label.top = point.y - label.height/2.0;
+    } else if (alignment == RFRadarChartViewAlignmentTop) {
+        label.top = point.y + margin;
+        label.left = point.x - label.width/2.0;
+    }
+}
+
 
 #pragma mark - Getters and Setters
 
 
 - (NSArray<UIColor *> *)colors {
     if (!_colors) {
-        UIColor *greenColor = [UIColor ajkBrandGreenColor];
+        UIColor *color = [UIColor ajkBrandGreenColor];
         _colors = @[
-                    [greenColor colorWithAlphaComponent:0.1],
-                    [greenColor colorWithAlphaComponent:0.15],
-                    [greenColor colorWithAlphaComponent:0.2],
-                    [greenColor colorWithAlphaComponent:0.3]
+                    [color colorWithAlphaComponent:0.1],
+                    [color colorWithAlphaComponent:0.15],
+                    [color colorWithAlphaComponent:0.2],
+                    [color colorWithAlphaComponent:0.3]
                     ];
     }
     return _colors;
