@@ -1,0 +1,66 @@
+
+作业列表
+POST:
+http://116.211.105.43:21214/coursecenter_api/hwGuidance/hwGuidanceListNew
+
+Data:
+{
+	"userId": "xj_42819",
+	"hwType": "t,t1,t2,t3,t4,t6",
+	"pageInfo": {
+		"pageSize": "20",
+		"currPage": "1"
+	},
+	"src": "1",
+	"timeType": "0",
+	"platformCode": "330400",
+	"userSessionId": "80535560-ea30-4739-814e-3fbc22d14983",
+	"versionPoint": "1",
+	"version": "501",
+	"userType": "0",
+	"loginPlatformCode": "330000"
+}
+
+
+作业详情
+POST:
+http://116.211.105.43:21214/coursecenter_api/guidance/guidancePushDetail
+
+Data:
+{
+	"userId": "xj_42819",
+	"userSessionId": "0b26ff3f-82c3-4e74-bd02-838ec27604ae",
+	"userName": "王欣怡",
+	"platformCode": "330400",
+	"src": "1",
+	"version": "501",
+	"guidanceId": "7D86C396E6354E389798F71A9B021C9F",
+	"userType": "0",
+	"loginPlatformCode": "330000"
+}
+
+
+提交作业
+POST:
+http://116.211.105.43:21214/coursecenter_api/guidance/addAnswer
+
+Data:
+{
+	"userId": "xj_42819",
+	"fileList": [],
+	"userName": "王欣怡",
+	"platformCode": "330400",
+	"loginPlatformCode": "330000",
+	"src": "1",
+	"version": "501",
+	"guidanceId": "7D86C396E6354E389798F71A9B021C9F",
+	"answerContent": "已经完成",
+	"userSessionId": "4010f227-9a86-41d7-a56e-7b2645907655"
+}
+
+Response:
+{
+	"data": "",
+	"desc": "success",
+	"result": "000000"
+}
