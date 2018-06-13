@@ -12,6 +12,7 @@
 @interface RFRadarChartViewController ()
 
 @property (nonatomic, strong) RFRadarChartView *radarChartView;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
@@ -21,6 +22,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor ajkWhiteColor];
     [self.view addSubview:self.radarChartView];
+    [self.view addSubview:self.imageView];
     [self.radarChartView mas_makeConstraints:^(MASConstraintMaker *make) {
         make_left_equalTo(self.view);
         make_right_equalTo(self.view);
@@ -41,6 +43,15 @@
                                         @(0.35),
                                         @(0.8)
                                         ]];
+    
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make_top_equalTo(self.radarChartView.mas_bottom).offset(60.0);
+        make_centerX_equalTo(self.view);
+        make_width_equalTo(200.0);
+        make_height_equalTo(60.0);
+    }];
+    
+    self.imageView.image = [[UIImage imageNamed:@"esf_propdetail_popover"] resizableImageWithCapInsets:UIEdgeInsetsMake(8.0, 0.0, 0.0, 0.0) resizingMode:UIImageResizingModeStretch];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,5 +67,11 @@
     return _radarChartView;
 }
 
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] init];
+    }
+    return _imageView;
+}
 
 @end
