@@ -14,24 +14,24 @@
 		162AD998201584B30020B15B /* AJKSubregionEvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AD997201584B30020B15B /* AJKSubregionEvaluationCell.m */; };
 		162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E4F2071F39500CE14F2 /* RFRadarChartView.m */; };
 		162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */; };
-		16352E2120D113AF00B0FADA /* CRFRiskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2020D113AF00B0FADA /* CRFRiskManager.m */; };
-		16352E2620D1151B00B0FADA /* CRFElevationDetectionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2520D1151B00B0FADA /* CRFElevationDetectionComponent.m */; };
+		16352E2120D113AF00B0FADA /* RFRiskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2020D113AF00B0FADA /* RFRiskManager.m */; };
+		16352E2620D1151B00B0FADA /* RFElevationDetectionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2520D1151B00B0FADA /* RFElevationDetectionComponent.m */; };
 		1641B8591FCD2F8600A46AFB /* RFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1641B8581FCD2F8600A46AFB /* RFNetworkManager.m */; };
 		1641B85D1FCD40FB00A46AFB /* NSString+RFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1641B85C1FCD40FB00A46AFB /* NSString+RFNetworking.m */; };
 		1641B8601FCD424000A46AFB /* RFNetworkTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1641B85F1FCD424000A46AFB /* RFNetworkTask.m */; };
 		164D38931FCFD3AB00C886CF /* RFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 164D38921FCFD3AB00C886CF /* RFTableViewController.m */; };
 		164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 164D38981FCFDB9E00C886CF /* RFTableModel.m */; };
 		164D389C1FD0276A00C886CF /* UIWindow+FLEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 164D389B1FD0276A00C886CF /* UIWindow+FLEX.m */; };
-		167F4E501FE7D7820020C394 /* UIViewController+CRFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 167F4E4F1FE7D7820020C394 /* UIViewController+CRFNetworking.m */; };
+		167F4E501FE7D7820020C394 /* UIViewController+RFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 167F4E4F1FE7D7820020C394 /* UIViewController+RFNetworking.m */; };
 		168A0DE22015C0680020A8C0 /* AIFMasonryMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 168A0DE12015C0680020A8C0 /* AIFMasonryMacro.m */; };
 		16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953C1FF10E93002866C9 /* UIView+RFCorner.m */; };
 		16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953F1FF11165002866C9 /* UIView+RFLayout.m */; };
 		16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955A1FF231D3002866C9 /* UIView+Yoga.m */; };
 		16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955D1FF231D3002866C9 /* YGLayout.m */; };
 		16FB95651FF2418C002866C9 /* example.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16FB95641FF2418B002866C9 /* example.jpg */; };
-		16FB95681FF33E3A002866C9 /* CRFClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95671FF33E3A002866C9 /* CRFClientInfo.m */; };
-		16FB956B1FF3B3B6002866C9 /* CRFTokenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956A1FF3B3B6002866C9 /* CRFTokenUtil.m */; };
-		16FB956E1FF3B5CB002866C9 /* CRFTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956D1FF3B5CB002866C9 /* CRFTokenModel.m */; };
+		16FB95681FF33E3A002866C9 /* RFClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95671FF33E3A002866C9 /* RFClientInfo.m */; };
+		16FB956B1FF3B3B6002866C9 /* RFTokenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956A1FF3B3B6002866C9 /* RFTokenUtil.m */; };
+		16FB956E1FF3B5CB002866C9 /* RFTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956D1FF3B5CB002866C9 /* RFTokenModel.m */; };
 		16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */; };
 		16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */; };
 		16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */; };
@@ -74,10 +74,10 @@
 		162B9E4F2071F39500CE14F2 /* RFRadarChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRadarChartView.m; sourceTree = "<group>"; };
 		162B9E512071FFF100CE14F2 /* RFRadarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFRadarChartViewController.h; sourceTree = "<group>"; };
 		162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRadarChartViewController.m; sourceTree = "<group>"; };
-		16352E1F20D113AF00B0FADA /* CRFRiskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFRiskManager.h; sourceTree = "<group>"; };
-		16352E2020D113AF00B0FADA /* CRFRiskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFRiskManager.m; sourceTree = "<group>"; };
-		16352E2420D1151B00B0FADA /* CRFElevationDetectionComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFElevationDetectionComponent.h; sourceTree = "<group>"; };
-		16352E2520D1151B00B0FADA /* CRFElevationDetectionComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFElevationDetectionComponent.m; sourceTree = "<group>"; };
+		16352E1F20D113AF00B0FADA /* RFRiskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFRiskManager.h; sourceTree = "<group>"; };
+		16352E2020D113AF00B0FADA /* RFRiskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRiskManager.m; sourceTree = "<group>"; };
+		16352E2420D1151B00B0FADA /* RFElevationDetectionComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFElevationDetectionComponent.h; sourceTree = "<group>"; };
+		16352E2520D1151B00B0FADA /* RFElevationDetectionComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFElevationDetectionComponent.m; sourceTree = "<group>"; };
 		1641B8541FCD2ECB00A46AFB /* RFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFNetworking.h; sourceTree = "<group>"; };
 		1641B8571FCD2F8600A46AFB /* RFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFNetworkManager.h; sourceTree = "<group>"; };
 		1641B8581FCD2F8600A46AFB /* RFNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFNetworkManager.m; sourceTree = "<group>"; };
@@ -93,8 +93,8 @@
 		164D38981FCFDB9E00C886CF /* RFTableModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFTableModel.m; sourceTree = "<group>"; };
 		164D389A1FD0276A00C886CF /* UIWindow+FLEX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FLEX.h"; sourceTree = "<group>"; };
 		164D389B1FD0276A00C886CF /* UIWindow+FLEX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FLEX.m"; sourceTree = "<group>"; };
-		167F4E4E1FE7D7820020C394 /* UIViewController+CRFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CRFNetworking.h"; sourceTree = "<group>"; };
-		167F4E4F1FE7D7820020C394 /* UIViewController+CRFNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CRFNetworking.m"; sourceTree = "<group>"; };
+		167F4E4E1FE7D7820020C394 /* UIViewController+RFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RFNetworking.h"; sourceTree = "<group>"; };
+		167F4E4F1FE7D7820020C394 /* UIViewController+RFNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RFNetworking.m"; sourceTree = "<group>"; };
 		168A0DE02015C0680020A8C0 /* AIFMasonryMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIFMasonryMacro.h; sourceTree = "<group>"; };
 		168A0DE12015C0680020A8C0 /* AIFMasonryMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIFMasonryMacro.m; sourceTree = "<group>"; };
 		16D1F0F42043EC6C00A51709 /* demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = demo.entitlements; path = demo/demo.entitlements; sourceTree = "<group>"; };
@@ -112,12 +112,12 @@
 		16FB955C1FF231D3002866C9 /* YGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
 		16FB955D1FF231D3002866C9 /* YGLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
 		16FB95641FF2418B002866C9 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
-		16FB95661FF33E3A002866C9 /* CRFClientInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFClientInfo.h; sourceTree = "<group>"; };
-		16FB95671FF33E3A002866C9 /* CRFClientInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFClientInfo.m; sourceTree = "<group>"; };
-		16FB95691FF3B3B6002866C9 /* CRFTokenUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFTokenUtil.h; sourceTree = "<group>"; };
-		16FB956A1FF3B3B6002866C9 /* CRFTokenUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFTokenUtil.m; sourceTree = "<group>"; };
-		16FB956C1FF3B5CB002866C9 /* CRFTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRFTokenModel.h; sourceTree = "<group>"; };
-		16FB956D1FF3B5CB002866C9 /* CRFTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRFTokenModel.m; sourceTree = "<group>"; };
+		16FB95661FF33E3A002866C9 /* RFClientInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFClientInfo.h; sourceTree = "<group>"; };
+		16FB95671FF33E3A002866C9 /* RFClientInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFClientInfo.m; sourceTree = "<group>"; };
+		16FB95691FF3B3B6002866C9 /* RFTokenUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFTokenUtil.h; sourceTree = "<group>"; };
+		16FB956A1FF3B3B6002866C9 /* RFTokenUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFTokenUtil.m; sourceTree = "<group>"; };
+		16FB956C1FF3B5CB002866C9 /* RFTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFTokenModel.h; sourceTree = "<group>"; };
+		16FB956D1FF3B5CB002866C9 /* RFTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFTokenModel.m; sourceTree = "<group>"; };
 		16FB95701FF5E946002866C9 /* NetworkExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkExampleViewController.h; sourceTree = "<group>"; };
 		16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkExampleViewController.m; sourceTree = "<group>"; };
 		16FB95721FF5E946002866C9 /* TakeScreenShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeScreenShotViewController.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		16352E1E20D1137B00B0FADA /* CRFRiskManager */ = {
 			isa = PBXGroup;
 			children = (
-				16352E1F20D113AF00B0FADA /* CRFRiskManager.h */,
-				16352E2020D113AF00B0FADA /* CRFRiskManager.m */,
+				16352E1F20D113AF00B0FADA /* RFRiskManager.h */,
+				16352E2020D113AF00B0FADA /* RFRiskManager.m */,
 				16352E2220D113B600B0FADA /* Components */,
 			);
 			path = CRFRiskManager;
@@ -197,8 +197,8 @@
 		16352E2220D113B600B0FADA /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				16352E2420D1151B00B0FADA /* CRFElevationDetectionComponent.h */,
-				16352E2520D1151B00B0FADA /* CRFElevationDetectionComponent.m */,
+				16352E2420D1151B00B0FADA /* RFElevationDetectionComponent.h */,
+				16352E2520D1151B00B0FADA /* RFElevationDetectionComponent.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,14 +214,14 @@
 				1641B8581FCD2F8600A46AFB /* RFNetworkManager.m */,
 				1641B85E1FCD424000A46AFB /* RFNetworkTask.h */,
 				1641B85F1FCD424000A46AFB /* RFNetworkTask.m */,
-				167F4E4E1FE7D7820020C394 /* UIViewController+CRFNetworking.h */,
-				167F4E4F1FE7D7820020C394 /* UIViewController+CRFNetworking.m */,
-				16FB95691FF3B3B6002866C9 /* CRFTokenUtil.h */,
-				16FB956A1FF3B3B6002866C9 /* CRFTokenUtil.m */,
-				16FB956C1FF3B5CB002866C9 /* CRFTokenModel.h */,
-				16FB956D1FF3B5CB002866C9 /* CRFTokenModel.m */,
-				16FB95661FF33E3A002866C9 /* CRFClientInfo.h */,
-				16FB95671FF33E3A002866C9 /* CRFClientInfo.m */,
+				167F4E4E1FE7D7820020C394 /* UIViewController+RFNetworking.h */,
+				167F4E4F1FE7D7820020C394 /* UIViewController+RFNetworking.m */,
+				16FB95691FF3B3B6002866C9 /* RFTokenUtil.h */,
+				16FB956A1FF3B3B6002866C9 /* RFTokenUtil.m */,
+				16FB956C1FF3B5CB002866C9 /* RFTokenModel.h */,
+				16FB956D1FF3B5CB002866C9 /* RFTokenModel.m */,
+				16FB95661FF33E3A002866C9 /* RFClientInfo.h */,
+				16FB95671FF33E3A002866C9 /* RFClientInfo.m */,
 			);
 			path = networking;
 			sourceTree = "<group>";
@@ -466,7 +466,6 @@
 			files = (
 				16FB95651FF2418C002866C9 /* example.jpg in Resources */,
 				18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */,
-				16F5351720872B73007C4163 /* esf_propdetail_popover@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +547,7 @@
 				16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */,
 				16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */,
 				162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */,
-				16FB956B1FF3B3B6002866C9 /* CRFTokenUtil.m in Sources */,
+				16FB956B1FF3B3B6002866C9 /* RFTokenUtil.m in Sources */,
 				164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */,
 				16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */,
 				1641B8591FCD2F8600A46AFB /* RFNetworkManager.m in Sources */,
@@ -559,7 +558,7 @@
 				16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */,
 				162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */,
 				164D389C1FD0276A00C886CF /* UIWindow+FLEX.m in Sources */,
-				16FB956E1FF3B5CB002866C9 /* CRFTokenModel.m in Sources */,
+				16FB956E1FF3B5CB002866C9 /* RFTokenModel.m in Sources */,
 				1641B85D1FCD40FB00A46AFB /* NSString+RFNetworking.m in Sources */,
 				16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */,
 				162AD98F201583BF0020B15B /* UIFont+RT.m in Sources */,
@@ -568,16 +567,16 @@
 				188744171FFB52A200558889 /* FlexBoxViewController.m in Sources */,
 				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				162AD992201584030020B15B /* CollectionViewExampleViewController.m in Sources */,
-				16FB95681FF33E3A002866C9 /* CRFClientInfo.m in Sources */,
-				167F4E501FE7D7820020C394 /* UIViewController+CRFNetworking.m in Sources */,
+				16FB95681FF33E3A002866C9 /* RFClientInfo.m in Sources */,
+				167F4E501FE7D7820020C394 /* UIViewController+RFNetworking.m in Sources */,
 				DB42038A205B390500A7E25E /* DemoHitTestView.m in Sources */,
 				168A0DE22015C0680020A8C0 /* AIFMasonryMacro.m in Sources */,
-				16352E2120D113AF00B0FADA /* CRFRiskManager.m in Sources */,
+				16352E2120D113AF00B0FADA /* RFRiskManager.m in Sources */,
 				18B5CAF81EC73869008BBA18 /* main.m in Sources */,
 				1641B8601FCD424000A46AFB /* RFNetworkTask.m in Sources */,
 				DB71705420502C4E00B194E2 /* DCollectionViewCell.m in Sources */,
 				16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */,
-				16352E2620D1151B00B0FADA /* CRFElevationDetectionComponent.m in Sources */,
+				16352E2620D1151B00B0FADA /* RFElevationDetectionComponent.m in Sources */,
 				DB6689A92050207700497BAF /* DCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

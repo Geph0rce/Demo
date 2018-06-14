@@ -1,5 +1,5 @@
 //
-//  CRFRiskManager.h
+//  RFRiskManager.h
 //  demo
 //
 //  Created by qianjie on 2018/6/13.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CRFRiskManager : NSObject
+@interface RFRiskManager : NSObject
 
 @end

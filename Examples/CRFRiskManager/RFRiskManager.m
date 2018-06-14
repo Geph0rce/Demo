@@ -1,5 +1,5 @@
 //
-//  CRFRiskManager.m
+//  RFRiskManager.m
 //  demo
 //
 //  Created by qianjie on 2018/6/13.
@@ -7,26 +7,26 @@
 //
 
 #import "RFNetworking.h"
-#import "CRFElevationDetectionComponent.h"
-#import "CRFRiskManager.h"
+#import "RFElevationDetectionComponent.h"
+#import "RFRiskManager.h"
 
-static NSTimeInterval const kCRFElevationDetectionTimeInterval = 1.0;
-static NSTimeInterval const kCRFRiskManagerUploadTimeInterval = 15.0;
+static NSTimeInterval const kRFElevationDetectionTimeInterval = 1.0;
+static NSTimeInterval const kRFRiskManagerUploadTimeInterval = 15.0;
 
-@interface CRFRiskManager ()
+@interface RFRiskManager ()
 
-@property (nonatomic, strong) CRFElevationDetectionComponent *elevationComponent;
+@property (nonatomic, strong) RFElevationDetectionComponent *elevationComponent;
 @property (nonatomic, strong) NSTimer *uploadTimer;
 @property (nonatomic, strong) RFNetworkManager *networkManager;
 
 @end
 
-@implementation CRFRiskManager
+@implementation RFRiskManager
 
-RFSingleton(CRFRiskManager)
+RFSingleton(RFRiskManager)
 
 + (void)load {
-    [CRFRiskManager sharedInstance];
+    [RFRiskManager sharedInstance];
 }
 
 - (instancetype)init {
@@ -40,7 +40,7 @@ RFSingleton(CRFRiskManager)
                                                  selector:@selector(applicationWillEnterForeground:)
                                                      name:UIApplicationWillEnterForegroundNotification
                                                    object:nil];
-        [self.elevationComponent start:kCRFElevationDetectionTimeInterval];
+        [self.elevationComponent start:kRFElevationDetectionTimeInterval];
         [self startTimer];
     }
     return self;
@@ -63,8 +63,8 @@ RFSingleton(CRFRiskManager)
 
 - (void)startTimer {
     [self stopTimerIfNeeded];
-    __weak CRFRiskManager *weakSelf = self;
-    self.uploadTimer = [NSTimer scheduledTimerWithTimeInterval:kCRFRiskManagerUploadTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
+    __weak RFRiskManager *weakSelf = self;
+    self.uploadTimer = [NSTimer scheduledTimerWithTimeInterval:kRFRiskManagerUploadTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
         [weakSelf upload];
     }];
 }
@@ -84,15 +84,15 @@ RFSingleton(CRFRiskManager)
 }
 
 - (void)applicationWillEnterForeground:(NSNotification *)notification {
-    [self.elevationComponent start:kCRFElevationDetectionTimeInterval];
+    [self.elevationComponent start:kRFElevationDetectionTimeInterval];
     [self startTimer];
 }
 
 #pragma mark - Getters
 
-- (CRFElevationDetectionComponent *)elevationComponent {
+- (RFElevationDetectionComponent *)elevationComponent {
     if (!_elevationComponent) {
-        _elevationComponent = [[CRFElevationDetectionComponent alloc] init];
+        _elevationComponent = [[RFElevationDetectionComponent alloc] init];
     }
     return _elevationComponent;
 }

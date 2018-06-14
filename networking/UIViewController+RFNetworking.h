@@ -1,5 +1,5 @@
 //
-//  UIViewController+CRFNetworking.h
+//  UIViewController+RFNetworking.h
 //  demo
 //
 //  Created by qianjie on 2017/12/18.
@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "RFNetworking.h"
-#import "CRFTokenUtil.h"
+#import "RFTokenUtil.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, CRFNetworingInterceptType) {
-    CRFNetworingInterceptTypeNone = 0,
-    CRFNetworingInterceptTypeRefreshToken = 1
+typedef NS_ENUM(NSInteger, RFNetworingInterceptType) {
+    RFNetworingInterceptTypeNone = 0,
+    RFNetworingInterceptTypeRefreshToken = 1
 };
 
-@interface UIViewController (CRFNetworking)
+@interface UIViewController (RFNetworking)
 
 @property (nonnull, nonatomic, readonly, strong) RFNetworkManager *crf_networkManager;
 

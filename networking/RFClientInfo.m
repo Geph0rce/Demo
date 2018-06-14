@@ -1,5 +1,5 @@
 //
-//  CRFClientInfo.m
+//  RFClientInfo.m
 //  demo
 //
 //  Created by qianjie on 2017/12/27.
@@ -10,20 +10,20 @@
 #import <arpa/inet.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AdSupport/AdSupport.h>
-#import "CRFClientInfo.h"
+#import "RFClientInfo.h"
 #import "RFNetworkingMacros.h"
 
-static NSString *const kCRFClientInfoPersistenceKey = @"CRFClientInfoPersistenceKey";
+static NSString *const kRFClientInfoPersistenceKey = @"RFClientInfoPersistenceKey";
 
-@implementation CRFClientInfo
+@implementation RFClientInfo
 
-RFSingleton(CRFClientInfo);
+RFSingleton(RFClientInfo);
 
 - (instancetype)init {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSDictionary *clientInfoDict = [ud objectForKey:kCRFClientInfoPersistenceKey];
+    NSDictionary *clientInfoDict = [ud objectForKey:kRFClientInfoPersistenceKey];
     if (clientInfoDict) {
-        self = [CRFClientInfo yy_modelWithDictionary:clientInfoDict];
+        self = [RFClientInfo yy_modelWithDictionary:clientInfoDict];
     } else {
         self = [super init];
         [self initClientInfo];

@@ -1,5 +1,5 @@
 //
-//  CRFClientInfo.h
+//  RFClientInfo.h
 //  demo
 //
 //  Created by qianjie on 2017/12/27.
@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface CRFClientInfo : NSObject <YYModel>
+@interface RFClientInfo : NSObject <YYModel>
 
 @property (nonatomic, copy) NSString *appVersion;
 @property (nonatomic, copy) NSString *blackBox;

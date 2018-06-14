@@ -1,13 +1,13 @@
 //
-//  CRFTokenModel.m
+//  RFTokenModel.m
 //  demo
 //
 //  Created by qianjie on 2017/12/27.
 //  Copyright © 2017年 Zen. All rights reserved.
 //
 
-#import "CRFTokenModel.h"
+#import "RFTokenModel.h"
 
-@implementation CRFTokenModel
+@implementation RFTokenModel
 
 @end

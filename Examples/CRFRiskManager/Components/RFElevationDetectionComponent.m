@@ -1,15 +1,15 @@
 //
-//  CRFElevationDetectionComponent.m
+//  RFElevationDetectionComponent.m
 //  demo
 //
 //  Created by qianjie on 2018/6/13.
 //  Copyright © 2018 Zen. All rights reserved.
 //
 
-#import "CRFElevationDetectionComponent.h"
+#import "RFElevationDetectionComponent.h"
 #import <CoreMotion/CoreMotion.h>
 
-@interface CRFElevationDetectionComponent ()
+@interface RFElevationDetectionComponent ()
 
 @property (nonatomic, strong) CMMotionManager *motionManager;
 @property (nonatomic, strong) NSOperationQueue *queue;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation CRFElevationDetectionComponent
+@implementation RFElevationDetectionComponent
 
 - (void)start:(NSTimeInterval)updateTimeInterval {
     if (self.motionManager.accelerometerAvailable) {

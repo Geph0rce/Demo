@@ -9,7 +9,7 @@
 #define RFNetworking_h
 
 #import "RFNetworkManager.h"
-#import "UIViewController+CRFNetworking.h"
+#import "UIViewController+RFNetworking.h"
 
 #endif
 

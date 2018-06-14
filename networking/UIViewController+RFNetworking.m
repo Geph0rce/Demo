@@ -1,5 +1,5 @@
 //
-//  UIViewController+CRFNetworking.m
+//  UIViewController+RFNetworking.m
 //  demo
 //
 //  Created by qianjie on 2017/12/18.
@@ -7,12 +7,12 @@
 //
 
 #import <objc/runtime.h>
-#import "UIViewController+CRFNetworking.h"
+#import "UIViewController+RFNetworking.h"
 
-static NSInteger const CRFNetworkingTokenExpireErrorCode = 401;
-static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/refreshtoken";
+static NSInteger const RFNetworkingTokenExpireErrorCode = 401;
+static NSString *const RFNetworkingRefreshTokenURL = @"http://www.baidu.com/refreshtoken";
 
-@implementation UIViewController (CRFNetworking)
+@implementation UIViewController (RFNetworking)
 
 + (void)load {
     static dispatch_once_t onceToken;
@@ -47,8 +47,8 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
 
 - (void)get:(NSString *)url params:(NSDictionary *)params complete:(RFNetworkCompleteBlock)complete {
     [self.crf_networkManager get:url params:params complete:^(__kindof NSObject *  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
-        if (statusCode == CRFNetworkingTokenExpireErrorCode) {
-            [self refreshToken:^(CRFTokenModel *model, NSInteger statusCode, NSError * _Nullable error) {
+        if (statusCode == RFNetworkingTokenExpireErrorCode) {
+            [self refreshToken:^(RFTokenModel *model, NSInteger statusCode, NSError * _Nullable error) {
                 if (error && complete) {
                     complete(nil, statusCode, error);
                 } else {
@@ -67,8 +67,8 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
 
 - (void)post:(NSString *)url params:(NSDictionary *)params complete:(RFNetworkCompleteBlock)complete {
     [self.crf_networkManager post:url params:params complete:^(__kindof NSObject *  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
-        if (statusCode == CRFNetworkingTokenExpireErrorCode) {
-            [self refreshToken:^(CRFTokenModel *model, NSInteger statusCode, NSError * _Nullable error) {
+        if (statusCode == RFNetworkingTokenExpireErrorCode) {
+            [self refreshToken:^(RFTokenModel *model, NSInteger statusCode, NSError * _Nullable error) {
                 if (error && complete) {
                     complete(nil, statusCode, error);
                 } else {
@@ -91,8 +91,8 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
             progress(uploadProgress);
         }
     } complete:^(__kindof NSObject * _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
-        if (statusCode == CRFNetworkingTokenExpireErrorCode) {
-            [self refreshToken:^(CRFTokenModel *model, NSInteger statusCode, NSError * _Nullable error) {
+        if (statusCode == RFNetworkingTokenExpireErrorCode) {
+            [self refreshToken:^(RFTokenModel *model, NSInteger statusCode, NSError * _Nullable error) {
                 if (error && complete) {
                     complete(nil, statusCode, error);
                 } else {
@@ -114,7 +114,7 @@ static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.baidu.com/ref
 
 
 - (void)refreshToken:(RFNetworkCompleteBlock)complete {
-    [[CRFTokenUtil sharedInstance] refreshToken:complete];
+    [[RFTokenUtil sharedInstance] refreshToken:complete];
 }
 
 #pragma mark - Getters

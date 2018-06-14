@@ -1,5 +1,5 @@
 //
-//  CRFTokenUtil.m
+//  RFTokenUtil.m
 //  demo
 //
 //  Created by qianjie on 2017/12/27.
@@ -7,12 +7,12 @@
 //
 
 #import "RFNetworking.h"
-#import "CRFTokenUtil.h"
+#import "RFTokenUtil.h"
 
-static NSString *const CRFNetworkingRefreshTokenURL = @"http://www.crf.com";
-static NSTimeInterval const CRFNetworkingRefreshTokenDuration = 120.0;
+static NSString *const RFNetworkingRefreshTokenURL = @"http://www.crf.com";
+static NSTimeInterval const RFNetworkingRefreshTokenDuration = 120.0;
 
-@interface CRFTokenUtil ()
+@interface RFTokenUtil ()
 
 @property (nonatomic, strong) RFNetworkManager *manager;
 @property (nonatomic, assign) BOOL isLoading;
@@ -21,9 +21,9 @@ static NSTimeInterval const CRFNetworkingRefreshTokenDuration = 120.0;
 
 @end
 
-@implementation CRFTokenUtil
+@implementation RFTokenUtil
 
-RFSingleton(CRFTokenUtil);
+RFSingleton(RFTokenUtil);
 
 
 - (void)refreshToken:(RFNetworkCompleteBlock)complete {
@@ -71,10 +71,10 @@ RFSingleton(CRFTokenUtil);
     self.isLoading = YES;
     
     self.manager = [[RFNetworkManager alloc] init];
-    [self.manager cancel:CRFNetworkingRefreshTokenURL];
-    [self.manager post:CRFNetworkingRefreshTokenURL params:refreshParams complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
+    [self.manager cancel:RFNetworkingRefreshTokenURL];
+    [self.manager post:RFNetworkingRefreshTokenURL params:refreshParams complete:^(id  _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
         if (response && [response isKindOfClass:[NSDictionary class]]) {
-            self.model = [CRFTokenModel yy_modelWithDictionary:response];
+            self.model = [RFTokenModel yy_modelWithDictionary:response];
         }
         
         for (RFNetworkCompleteBlock operation in self.operations) {
@@ -88,7 +88,7 @@ RFSingleton(CRFTokenUtil);
 
 - (BOOL)needToRefreshToken {
     NSTimeInterval timeInterval = [[NSDate date] timeIntervalSince1970];
-    if (timeInterval - self.timestamp > CRFNetworkingRefreshTokenDuration) {
+    if (timeInterval - self.timestamp > RFNetworkingRefreshTokenDuration) {
         return YES;
     }
     return NO;

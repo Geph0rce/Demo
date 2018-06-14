@@ -1,5 +1,5 @@
 //
-//  CRFTokenUtil.h
+//  RFTokenUtil.h
 //  demo
 //
 //  Created by qianjie on 2017/12/27.
@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CRFTokenModel.h"
+#import "RFTokenModel.h"
 
-@interface CRFTokenUtil : NSObject
+@interface RFTokenUtil : NSObject
 
-@property (nonatomic, strong) CRFTokenModel *model;
+@property (nonatomic, strong) RFTokenModel *model;
 
 + (instancetype)sharedInstance;
 

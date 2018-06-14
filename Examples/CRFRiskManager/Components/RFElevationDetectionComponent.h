@@ -1,5 +1,5 @@
 //
-//  CRFElevationDetectionComponent.h
+//  RFElevationDetectionComponent.h
 //  demo
 //
 //  Created by qianjie on 2018/6/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CRFElevationDetectionComponent : NSObject
+@interface RFElevationDetectionComponent : NSObject
 
 
 /**
