@@ -1,33 +1,32 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - FLEX (2.4.0)
   - Masonry (1.1.0)
-  - RFFoundation (0.1.1):
-    - RFFoundation/Categories (= 0.1.1)
-    - RFFoundation/Preprocessors (= 0.1.1)
-  - RFFoundation/Categories (0.1.1)
-  - RFFoundation/Preprocessors (0.1.1)
-  - RFTypeface (0.1.2):
+  - RFFoundation (0.1.2):
+    - RFFoundation/Categories (= 0.1.2)
+    - RFFoundation/Preprocessors (= 0.1.2)
+  - RFFoundation/Categories (0.1.2)
+  - RFFoundation/Preprocessors (0.1.2)
+  - RFTypeface (0.1.5):
     - RFFoundation
-  - SDWebImage (4.2.2):
-    - SDWebImage/Core (= 4.2.2)
-  - SDWebImage/Core (4.2.2)
-  - WechatOpenSDK (1.8.1)
-  - Yoga (1.6.0)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+  - Yoga (1.8.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -37,21 +36,19 @@ DEPENDENCIES:
   - RFFoundation
   - RFTypeface
   - SDWebImage
-  - WechatOpenSDK
   - Yoga
   - YYModel
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  RFFoundation: 9c10f17a70521341c0fae0e7cb65d9ed08ffb451
-  RFTypeface: 29c527c76ee5ce363bc414beb518f44ac0b6ab65
-  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
-  WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
-  Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
+  RFFoundation: b30559f8d2320a12fdba81fce010f05defd65543
+  RFTypeface: b30c52548ab57a4d774539c9083da79105f7af50
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  Yoga: e6f1fed82138c17da5332e15e5770abf0e9cc386
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ca27119ca2820169acee8637182af72d59c1ec15
+PODFILE CHECKSUM: 742b844d398e8251a9108c2708851ba313308261
 
 COCOAPODS: 1.3.1
