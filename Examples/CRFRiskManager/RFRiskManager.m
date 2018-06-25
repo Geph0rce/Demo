@@ -46,11 +46,24 @@ RFSingleton(RFRiskManager)
     return self;
 }
 
+#pragma mark - Stop and Start
+
+- (void)stop {
+    [self.elevationComponent stop];
+    [self stopTimerIfNeeded];
+}
+
+- (void)restart {
+    [self stop];
+    [self.elevationComponent start:kRFElevationDetectionTimeInterval];
+    [self startTimer];
+}
 
 #pragma mark - Upload Stuff
 
 - (void)upload {
     NSArray *cache = [self.elevationComponent fetchCache];
+    DLog(@"cache count : %@", @(cache.count));
     if (cache.count > 0) {
         NSDictionary *params = @{ @"params" : cache };
         [self.networkManager post:@"http://www.baidu.com" params:params complete:^(__kindof NSObject * _Nullable response, NSInteger statusCode, NSError * _Nullable error) {
@@ -67,6 +80,7 @@ RFSingleton(RFRiskManager)
     self.uploadTimer = [NSTimer scheduledTimerWithTimeInterval:kRFRiskManagerUploadTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
         [weakSelf upload];
     }];
+    [[NSRunLoop currentRunLoop] addTimer:self.uploadTimer forMode:NSRunLoopCommonModes];
 }
 
 - (void)stopTimerIfNeeded {
@@ -79,13 +93,11 @@ RFSingleton(RFRiskManager)
 #pragma mark - Notifications
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification {
-    [self.elevationComponent stop];
-    [self stopTimerIfNeeded];
+    [self stop];
 }
 
 - (void)applicationWillEnterForeground:(NSNotification *)notification {
-    [self.elevationComponent start:kRFElevationDetectionTimeInterval];
-    [self startTimer];
+    [self restart];
 }
 
 #pragma mark - Getters

@@ -10,4 +10,8 @@
 
 @interface RFRiskManager : NSObject
 
+- (void)stop;
+
+- (void)restart;
+
 @end
