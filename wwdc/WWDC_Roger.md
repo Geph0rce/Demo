@@ -26,4 +26,15 @@ Page 5:
 * 解析NSDictionary/NSArray之后，生成的结构化数据，我们称之为Model；
 
 
+Page 6:
+
+对于Raw Data，比如网络请求返回的二进制数据。
+
+Page 7:
+* 可以通过数据长度判断数据是否是可信赖的；（如果我们对数据的长度有一个预期的话）
+
+Page 7:
+
+* 很多时候，我们事先并不知道数据应该有多长; 
+
 NSSecureCoding and Codable
