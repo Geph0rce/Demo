@@ -24,9 +24,8 @@ class DecodeDemo {
     
     func decodeData() throws {
         let decoder = JSONDecoder()
-        let listing = try decoder.decode(Listing.self, from:json)
-
-        print(listing);
+        let list = try decoder.decode([Listing].self, from:json)
+        print(list);
     }
     
     
