@@ -10,6 +10,10 @@ import Foundation
 
 struct Listing : Codable {
     var id : Int
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+    }
 }
 
 class DecodeDemo {

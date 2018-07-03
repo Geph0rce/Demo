@@ -40,8 +40,7 @@ RFSingleton(RFRiskManager)
                                                  selector:@selector(applicationWillEnterForeground:)
                                                      name:UIApplicationWillEnterForegroundNotification
                                                    object:nil];
-        [self.elevationComponent start:kRFElevationDetectionTimeInterval];
-        [self startTimer];
+        [self restart];
     }
     return self;
 }
