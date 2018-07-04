@@ -79,6 +79,7 @@ RFSingleton(RFRiskManager)
     self.uploadTimer = [NSTimer scheduledTimerWithTimeInterval:kRFRiskManagerUploadTimeInterval repeats:YES block:^(NSTimer * _Nonnull timer) {
         [weakSelf upload];
     }];
+    self.uploadTimer = [NSTimer scheduledTimerWithTimeInterval:kRFRiskManagerUploadTimeInterval target:self selector:@selector(upload) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.uploadTimer forMode:NSRunLoopCommonModes];
 }
 
