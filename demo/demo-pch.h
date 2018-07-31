@@ -24,6 +24,7 @@
 #import "UIFont+RT.h"
 #import "UIColor+RT.h"
 #import "AIFMasonryMacro.h"
+#import <RFTypeface/RFTypeface.h>
 
 #pragma mark - defines
 

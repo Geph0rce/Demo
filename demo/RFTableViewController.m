@@ -111,6 +111,17 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         chartModel.title = @"RFRadarChartViewController";
         chartModel.className = @"RFRadarChartViewController";
         [array addObject:chartModel];
+        
+        
+        RFTableModel *panModel = [[RFTableModel alloc] init];
+        panModel.title = @"RFPanGestureViewController";
+        panModel.className = @"RFPanGestureViewController";
+        [array addObject:panModel];
+       
+        RFTableModel *photoModel = [[RFTableModel alloc] init];
+        photoModel.title = @"RFPhotoViewController";
+        photoModel.className = @"RFPhotoViewController";
+        [array addObject:photoModel];
         _rowsArray = [array copy];
     }
     return _rowsArray;

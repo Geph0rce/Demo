@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Listing : Codable {
     var id : Int
@@ -16,12 +17,18 @@ struct Listing : Codable {
     }
 }
 
-class DecodeDemo {
+class DecodeDemo : UIViewController {
 
-    var json:Data = Data();
-    
-    
-    
+    var json:Data = Data()
+    var value: Int?
+    override func viewDidLoad() {
+        super.viewDidLoad();
+        let controller = UIViewController()
+        self.view.addSubview(controller.view)
+        if let value = self.value {
+            print("value \(value)")
+        }
+    }
     
     
     
