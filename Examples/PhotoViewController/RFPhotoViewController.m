@@ -38,17 +38,35 @@ UICollectionViewDelegateFlowLayout
         make_edges_equalTo(self.view);
     }];
     [self.collectionView reloadData];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+    self.navigationItem.leftBarButtonItem = backButton;
     
+    UIBarButtonItem *rotateButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Rotate" style:UIBarButtonItemStylePlain target:self action:@selector(rotateAction)];
+    [self.navigationItem setRightBarButtonItem:rotateButtonItem];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+#pragma mark - Actions
+
+- (void)rotateAction {
+    [[UIDevice currentDevice] setValue:@(UIDeviceOrientationLandscapeRight) forKey:@"orientation"];
+}
+
+- (void)backAction {
+    if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
+        [[UIDevice currentDevice] setValue:@(UIDeviceOrientationPortrait) forKey:@"orientation"];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 
