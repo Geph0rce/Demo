@@ -21,6 +21,8 @@ UICollectionViewDelegateFlowLayout
 @property (nonatomic, strong) NSArray *urls;
 
 @property (nonatomic, assign) CGFloat offsetXWhenBeginDragging;
+@property (nonatomic, assign) CGSize itemSize;
+@property (nonatomic, assign) NSUInteger currentPage;
 
 @end
 
@@ -31,14 +33,22 @@ UICollectionViewDelegateFlowLayout
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.collectionView];
     
+    self.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make_edges_equalTo(self.view);
     }];
     [self.collectionView reloadData];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 
@@ -49,7 +59,7 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    CGFloat itemWidth = SCREEN_WIDTH + 30.0;
+    CGFloat itemWidth = self.itemSize.width + 30.0;
     NSInteger page = roundf(self.offsetXWhenBeginDragging / itemWidth);
     DLog(@"velocity: %@ offset: %@", NSStringFromCGPoint(velocity), NSStringFromCGPoint(scrollView.contentOffset));
     if (velocity.x > 0 && targetContentOffset->x > scrollView.contentOffset.x) {
@@ -58,8 +68,8 @@ UICollectionViewDelegateFlowLayout
         page--;
     }
     
-    page = MIN(MAX(0, page), (self.urls.count - 1));
-    CGFloat targetOffsetX = MIN((page * itemWidth), (scrollView.contentSize.width - scrollView.width));
+    self.currentPage = MIN(MAX(0, page), (self.urls.count - 1));
+    CGFloat targetOffsetX = MIN((self.currentPage * itemWidth), (scrollView.contentSize.width - scrollView.width));
     targetContentOffset->x = MAX(targetOffsetX, 0);
 }
 
@@ -79,7 +89,31 @@ UICollectionViewDelegateFlowLayout
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    return self.itemSize;
+}
+
+
+#pragma mark - Orientation
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscape;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    self.itemSize = size;
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+            [self.collectionView reloadData];
+            [self.collectionView layoutIfNeeded];
+            [self.collectionView setContentOffset:CGPointMake(self.currentPage * (self.itemSize.width + 30.0), 0) animated:NO];
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+
+    }];
+
 }
 
 #pragma mark - Getters

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RFPhotoViewController : UIViewController
+@interface RFPhotoViewController : RFBaseViewController
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RFTableViewController : UIViewController
+@interface RFTableViewController : RFBaseViewController
 
 @end

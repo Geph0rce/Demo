@@ -16,6 +16,7 @@
 		162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */; };
 		1631D7D121100D10007FCFC4 /* RFPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7D021100D10007FCFC4 /* RFPhotoViewController.m */; };
 		1631D7D52110471F007FCFC4 /* RFPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7D42110471F007FCFC4 /* RFPhotoCollectionViewCell.m */; };
+		1631D7DB21116004007FCFC4 /* RFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7DA21116004007FCFC4 /* RFBaseViewController.m */; };
 		16352E2120D113AF00B0FADA /* RFRiskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2020D113AF00B0FADA /* RFRiskManager.m */; };
 		16352E2620D1151B00B0FADA /* RFElevationDetectionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2520D1151B00B0FADA /* RFElevationDetectionComponent.m */; };
 		1641B8591FCD2F8600A46AFB /* RFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1641B8581FCD2F8600A46AFB /* RFNetworkManager.m */; };
@@ -82,6 +83,8 @@
 		1631D7D021100D10007FCFC4 /* RFPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFPhotoViewController.m; sourceTree = "<group>"; };
 		1631D7D32110471F007FCFC4 /* RFPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1631D7D42110471F007FCFC4 /* RFPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		1631D7D921116004007FCFC4 /* RFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBaseViewController.h; sourceTree = "<group>"; };
+		1631D7DA21116004007FCFC4 /* RFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBaseViewController.m; sourceTree = "<group>"; };
 		16352E1F20D113AF00B0FADA /* RFRiskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFRiskManager.h; sourceTree = "<group>"; };
 		16352E2020D113AF00B0FADA /* RFRiskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRiskManager.m; sourceTree = "<group>"; };
 		16352E2420D1151B00B0FADA /* RFElevationDetectionComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFElevationDetectionComponent.h; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				18B5CB021EC73869008BBA18 /* Assets.xcassets */,
 				18B5CB071EC73869008BBA18 /* Info.plist */,
 				18B5CAF61EC73869008BBA18 /* Supporting Files */,
+				1631D7D921116004007FCFC4 /* RFBaseViewController.h */,
+				1631D7DA21116004007FCFC4 /* RFBaseViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				162AD992201584030020B15B /* CollectionViewExampleViewController.m in Sources */,
 				DB6B902A20E3020A000720D2 /* demo.swift in Sources */,
+				1631D7DB21116004007FCFC4 /* RFBaseViewController.m in Sources */,
 				16FB95681FF33E3A002866C9 /* RFClientInfo.m in Sources */,
 				1631D7D52110471F007FCFC4 /* RFPhotoCollectionViewCell.m in Sources */,
 				167F4E501FE7D7820020C394 /* UIViewController+RFNetworking.m in Sources */,

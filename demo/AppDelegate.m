@@ -94,6 +94,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    UIViewController *controller = window.rootViewController;
+    if ([window.rootViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)window.rootViewController;
+        controller = navigationController.topViewController;
+    }
+    
+    if (controller.shouldAutorotate) {
+        return controller.supportedInterfaceOrientations;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     NSMutableString *coordinate = [NSMutableString string];
     for (CLLocation *location in locations) {
@@ -115,5 +129,7 @@
     }
     return _manager;
 }
+
+
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RFPanGestureViewController : UIViewController
+@interface RFPanGestureViewController : RFBaseViewController
 
 @end
