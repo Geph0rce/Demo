@@ -45,8 +45,8 @@
     
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make_left_equalTo(15.0);
-        make_right_equalTo(-15.0);
         make_top_equalTo(20.0);
+        make_width_lessThanOrEqualTo(285.0);
     }];
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
@@ -57,7 +57,11 @@
     panScrollGesture.delegate = self;
     [self.scrollView addGestureRecognizer:panScrollGesture];
     
-    self.contentLabel.attributedText = nil;
+   NSAttributedString *hello = @"古美500万起最优次新小区，没有之一！".typeface.bold(18.0).lineHeight(26.0).lineBreakMode(NSLineBreakByTruncatingTail).compose;
+    
+    CGRect rect = [hello boundingRectWithSize:CGSizeMake(285.0, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    
+    self.contentLabel.attributedText = hello;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -104,7 +108,7 @@
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.numberOfLines = 0;
-        _contentLabel.preferredMaxLayoutWidth = SCREEN_WIDTH - 30.0;
+        _contentLabel.preferredMaxLayoutWidth = 285.0;
         NSString *oldMan = @"Old man look at my life,I'm a lot like you were.Old man look at my life,I'm a lot like you were.Old man look at my life,Twenty four and there's so much moreLive alone in a paradiseThat makes me think of two.Love lost, such a cost,Give me things that don't get lost.Like a coin that won't get tossedRolling home to you.Old man take a look at my life I'm a lot like youI need someone to love me the whole day throughAh, one look in my eyes and you can tell that's true.Lullabies, look in your eyes,Run around the same old town.Doesn't mean that much to meTo mean that much to you.I've been first and lastLook at how the time goes past.But I'm all alone at last.Rolling home to you.";
         _contentLabel.attributedText = oldMan.typeface.font([UIFont systemFontOfSize:16.0]).lineHeight(22.0).compose;
     }
