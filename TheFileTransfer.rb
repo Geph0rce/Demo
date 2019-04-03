@@ -40,7 +40,7 @@ def find_all_xcassets_path(from, list)
     	path = Pathname.new(filename)
     	extname = path.extname
     	begin
-        	if extname == '.xcassets'
+        	if extname == '.imageset'
     			list << path
         	end
     	rescue Exception => e
@@ -76,6 +76,20 @@ def find_all_assets_in_path(from, list)
 	end
 end
 
+def fetch_asset(asset, path_list, to)
+    path_list.each { |asset_path|
+        begin
+            basename = asset_path.basename
+            filename = basename.to_s
+            if filename == asset + '.imageset'
+                puts "find asset path : #{asset_path}"
+                FileUtils.mv(asset_path, to, :force => true)
+            end
+        rescue Exception => e
+            puts "Exception: #{e}"
+        end
+    }
+end
 
 def cp_objc_file(path, list)
 	list.each { |pa|
@@ -115,6 +129,9 @@ elsif option == 'fetch'
 elsif  option == 'assets'
 	find_all_xcassets_path(main_project_dir, assets_path_list)
 	find_all_assets_in_path(pod_dir, pod_assets_list)
+    pod_assets_list.each { |asset|
+        fetch_asset(asset, assets_path_list, assets_dir)
+    }
 	puts "pod assets list: #{pod_assets_list}"
 else 
 	puts 'invalid option: use [ cp or fetch or assets ]'
