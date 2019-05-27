@@ -15,7 +15,9 @@ assets_dir = '/Users/qianjie/repo/AnjukeMoudle/AnjukeMoudle/Assets/AnjukeMoudle.
 common_business_dir = '/Users/qianjie/repo/AJKCommonBusiness/AJKCommonBusiness'
 service_dir = '/Users/qianjie/repo/Service/AIFLegacyService'
 common_common_dir = '/Users/qianjie/repo/AJKCommonBusiness/Common'
+common_dep_dir = '/Users/qianjie/repo/AJKCommonBusiness/CommonDep'
 common_service_dir = '/Users/qianjie/repo/AJKCommonBusiness/Service'
+wb_common_dir = '/Users/qianjie/repo/AJKWBCommonBusiness/AJKWBCommonBusiness'
 
 # array to record path objects
 main_path_list = Array.new()
@@ -191,8 +193,8 @@ def mv_file_list(list, to)
     begin
         list.each do |path|
             #FileUtils.mv(path, to, :force => true)
-            FileUtils.chmod('+w', to)
-            FileUtils.cp(path, to)
+            #FileUtils.chmod('+w', to)
+            #FileUtils.cp(path, to)
         end
     rescue Exception => e
         
@@ -216,6 +218,19 @@ elsif option == 'pull'
 	pod_path_list.each { |path|
 		fetch_objc_file(path, main_path_list)
 	}	
+
+elsif option == 'clear' 
+    find_all_objc_path(common_business_dir, main_path_list)
+    find_all_objc_path(wb_common_dir, pod_path_list)
+
+    main_path_list.each { |path|
+        pod_path_list.each { |pa|
+            if pa.basename == path.basename
+                FileUtils.rm(path, :force => true)
+            end
+        }
+    }   
+
 # main => assets
 elsif  option == 'assets'
 	find_all_xcassets_path(main_project_dir, assets_path_list)
@@ -239,6 +254,10 @@ elsif option == 'anjuke'
         find_all_headers(common_business_dir, path, 'CommonBusiness', assets_path_list)
     }
 
+    pod_path_list.each { |path|
+        find_all_headers(service_dir, path, 'Service', assets_path_list)
+    }
+
     if assets_path_list.length > 0
         mv_file_list(assets_path_list, common_common_dir)
     end
@@ -251,8 +270,18 @@ elsif option == 'common_common'
     }
 
     if assets_path_list.length > 0
-        mv_file_list(assets_path_list, common_common_dir)
+        mv_file_list(assets_path_list, common_dep_dir)
     end
+elsif option == 'common_dep'
+    find_all_imports_in_path(common_dep_dir, pod_path_list)
+    #puts "imports: #{pod_path_list}"
+    pod_path_list.each { |path|
+        find_all_headers(common_business_dir, path, 'CommonBusiness', assets_path_list)
+    }
+
+    if assets_path_list.length > 0
+        mv_file_list(assets_path_list, common_dep_dir)
+    end    
 
 elsif option == 'common_service'
     find_all_imports_in_path(common_common_dir, pod_path_list)
