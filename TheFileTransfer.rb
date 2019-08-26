@@ -18,6 +18,8 @@ common_common_dir = '/Users/qianjie/repo/AJKCommonBusiness/Common'
 common_dep_dir = '/Users/qianjie/repo/AJKCommonBusiness/CommonDep'
 common_service_dir = '/Users/qianjie/repo/AJKCommonBusiness/Service'
 wb_common_dir = '/Users/qianjie/repo/AJKWBCommonBusiness/AJKWBCommonBusiness'
+new_house_dir = '/Users/qianjie/repo/NewHouseModule/NewHouseModule'
+zixun_dir = '/Users/qianjie/repo/ZiXun/ZiXun'
 
 # array to record path objects
 main_path_list = Array.new()
@@ -257,6 +259,15 @@ elsif option == 'anjuke'
     pod_path_list.each { |path|
         find_all_headers(service_dir, path, 'Service', assets_path_list)
     }
+
+    pod_path_list.each { |path|
+        find_all_headers(new_house_dir, path, 'NewHouse', assets_path_list)
+    }
+
+    pod_path_list.each { |path|
+        find_all_headers(zixun_dir, path, 'ZiXun', assets_path_list)
+    }
+
 
     if assets_path_list.length > 0
         mv_file_list(assets_path_list, common_common_dir)

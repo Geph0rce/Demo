@@ -8,10 +8,22 @@
 
 #import "RFPanGestureViewController.h"
 
+@interface RFScrollView : UIScrollView
+
+@end
+
+@implementation RFScrollView
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+@end
+
 @interface RFPanGestureViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UILabel *contentLabel;
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) RFScrollView *scrollView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIView *panGestureView;
 
@@ -91,7 +103,6 @@
         self.panGestureView.top = self.panGestureView.top + point.y;
         [gestureRecognizer setTranslation:CGPointMake(0.0, 0.0) inView:self.view];
         if (self.panGestureView.top <= 100.0) {
-            self.scrollView.scrollEnabled = YES;
             self.scrollView.showsVerticalScrollIndicator = YES;
         }
     }
@@ -123,10 +134,9 @@
     return _panGestureView;
 }
 
-- (UIScrollView *)scrollView {
+- (RFScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] init];
-        _scrollView.scrollEnabled = YES;
+        _scrollView = [[RFScrollView alloc] init];
     }
     return _scrollView;
 }
