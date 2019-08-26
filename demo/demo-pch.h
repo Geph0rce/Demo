@@ -20,7 +20,6 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+RFCorner.h"
 #import "UIView+RFLayout.h"
-#import "UIView+Yoga.h"
 #import "UIFont+RT.h"
 #import "UIColor+RT.h"
 #import "AIFMasonryMacro.h"

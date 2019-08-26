@@ -27,13 +27,10 @@
 		164D389C1FD0276A00C886CF /* UIWindow+FLEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 164D389B1FD0276A00C886CF /* UIWindow+FLEX.m */; };
 		167BA19621096FE0009B6031 /* RFPanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167BA19521096FE0009B6031 /* RFPanGestureViewController.m */; };
 		167F4E501FE7D7820020C394 /* UIViewController+RFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 167F4E4F1FE7D7820020C394 /* UIViewController+RFNetworking.m */; };
+		1682BCD02313E13F005BF105 /* RFBluetoothObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1682BCCF2313E13F005BF105 /* RFBluetoothObserver.m */; };
 		168A0DE22015C0680020A8C0 /* AIFMasonryMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 168A0DE12015C0680020A8C0 /* AIFMasonryMacro.m */; };
-		16A5B3C921918DAD0042B459 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5B3C821918DAD0042B459 /* NotificationService.m */; };
-		16A5B3CD21918DAD0042B459 /* notify.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16A5B3C521918DAD0042B459 /* notify.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953C1FF10E93002866C9 /* UIView+RFCorner.m */; };
 		16FB95401FF11165002866C9 /* UIView+RFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB953F1FF11165002866C9 /* UIView+RFLayout.m */; };
-		16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955A1FF231D3002866C9 /* UIView+Yoga.m */; };
-		16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB955D1FF231D3002866C9 /* YGLayout.m */; };
 		16FB95651FF2418C002866C9 /* example.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16FB95641FF2418B002866C9 /* example.jpg */; };
 		16FB95681FF33E3A002866C9 /* RFClientInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95671FF33E3A002866C9 /* RFClientInfo.m */; };
 		16FB956B1FF3B3B6002866C9 /* RFTokenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB956A1FF3B3B6002866C9 /* RFTokenUtil.m */; };
@@ -42,7 +39,6 @@
 		16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */; };
 		16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */; };
 		1828CE471FFC7682004646E8 /* RFScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828CE461FFC7682004646E8 /* RFScreen.m */; };
-		188744171FFB52A200558889 /* FlexBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188744161FFB52A200558889 /* FlexBoxViewController.m */; };
 		18B5CAF81EC73869008BBA18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAF71EC73869008BBA18 /* main.m */; };
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
@@ -55,16 +51,6 @@
 		DBADD6362312CA6B00F544AF /* RFBluetoothScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		16A5B3CB21918DAD0042B459 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18B5CAEB1EC73869008BBA18 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 16A5B3C421918DAD0042B459;
-			remoteInfo = notify;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		16D1F1052043EEE000A51709 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -72,7 +58,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				16A5B3CD21918DAD0042B459 /* notify.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,9 +108,10 @@
 		167BA19521096FE0009B6031 /* RFPanGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFPanGestureViewController.m; sourceTree = "<group>"; };
 		167F4E4E1FE7D7820020C394 /* UIViewController+RFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RFNetworking.h"; sourceTree = "<group>"; };
 		167F4E4F1FE7D7820020C394 /* UIViewController+RFNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RFNetworking.m"; sourceTree = "<group>"; };
+		1682BCCE2313E13F005BF105 /* RFBluetoothObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothObserver.h; sourceTree = "<group>"; };
+		1682BCCF2313E13F005BF105 /* RFBluetoothObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothObserver.m; sourceTree = "<group>"; };
 		168A0DE02015C0680020A8C0 /* AIFMasonryMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIFMasonryMacro.h; sourceTree = "<group>"; };
 		168A0DE12015C0680020A8C0 /* AIFMasonryMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIFMasonryMacro.m; sourceTree = "<group>"; };
-		16A5B3C521918DAD0042B459 /* notify.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notify.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A5B3C721918DAD0042B459 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		16A5B3C821918DAD0042B459 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		16A5B3CA21918DAD0042B459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,11 +121,6 @@
 		16FB953C1FF10E93002866C9 /* UIView+RFCorner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RFCorner.m"; sourceTree = "<group>"; };
 		16FB953E1FF11165002866C9 /* UIView+RFLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RFLayout.h"; sourceTree = "<group>"; };
 		16FB953F1FF11165002866C9 /* UIView+RFLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RFLayout.m"; sourceTree = "<group>"; };
-		16FB95591FF231D3002866C9 /* UIView+Yoga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Yoga.h"; sourceTree = "<group>"; };
-		16FB955A1FF231D3002866C9 /* UIView+Yoga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Yoga.m"; sourceTree = "<group>"; };
-		16FB955B1FF231D3002866C9 /* YGLayout+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YGLayout+Private.h"; sourceTree = "<group>"; };
-		16FB955C1FF231D3002866C9 /* YGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGLayout.h; sourceTree = "<group>"; };
-		16FB955D1FF231D3002866C9 /* YGLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGLayout.m; sourceTree = "<group>"; };
 		16FB95641FF2418B002866C9 /* example.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example.jpg; sourceTree = "<group>"; };
 		16FB95661FF33E3A002866C9 /* RFClientInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFClientInfo.h; sourceTree = "<group>"; };
 		16FB95671FF33E3A002866C9 /* RFClientInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFClientInfo.m; sourceTree = "<group>"; };
@@ -155,8 +136,6 @@
 		16FB95781FF5E96E002866C9 /* RIFScreenShotActionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIFScreenShotActionView.m; sourceTree = "<group>"; };
 		1828CE451FFC7682004646E8 /* RFScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFScreen.h; sourceTree = "<group>"; };
 		1828CE461FFC7682004646E8 /* RFScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFScreen.m; sourceTree = "<group>"; };
-		188744151FFB52A200558889 /* FlexBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexBoxViewController.h; sourceTree = "<group>"; };
-		188744161FFB52A200558889 /* FlexBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexBoxViewController.m; sourceTree = "<group>"; };
 		18B5CAF31EC73869008BBA18 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B5CAF71EC73869008BBA18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B5CAF91EC73869008BBA18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,20 +154,12 @@
 		DB71705320502C4E00B194E2 /* DCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCollectionViewCell.m; sourceTree = "<group>"; };
 		DBA8E413230C392D0096C5C1 /* RFBluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothManager.h; sourceTree = "<group>"; };
 		DBA8E414230C392D0096C5C1 /* RFBluetoothManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothManager.m; sourceTree = "<group>"; };
-		DBADD6322312C77400F544AF /* RFBluetoothObserverProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothObserverProtocol.h; sourceTree = "<group>"; };
 		DBADD6342312CA6B00F544AF /* RFBluetoothScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothScanViewController.h; sourceTree = "<group>"; };
 		DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothScanViewController.m; sourceTree = "<group>"; };
 		EB862823D1EF326D5E0EF047 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		16A5B3C221918DAD0042B459 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18B5CAF01EC73869008BBA18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,18 +285,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		16FB95581FF231D3002866C9 /* YogaKit */ = {
-			isa = PBXGroup;
-			children = (
-				16FB95591FF231D3002866C9 /* UIView+Yoga.h */,
-				16FB955A1FF231D3002866C9 /* UIView+Yoga.m */,
-				16FB955B1FF231D3002866C9 /* YGLayout+Private.h */,
-				16FB955C1FF231D3002866C9 /* YGLayout.h */,
-				16FB955D1FF231D3002866C9 /* YGLayout.m */,
-			);
-			path = YogaKit;
-			sourceTree = "<group>";
-		};
 		16FB95601FF232AA002866C9 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,8 +306,6 @@
 				16FB95711FF5E946002866C9 /* NetworkExampleViewController.m */,
 				16FB95721FF5E946002866C9 /* TakeScreenShotViewController.h */,
 				16FB95731FF5E946002866C9 /* TakeScreenShotViewController.m */,
-				188744151FFB52A200558889 /* FlexBoxViewController.h */,
-				188744161FFB52A200558889 /* FlexBoxViewController.m */,
 				162AD990201584030020B15B /* CollectionViewExampleViewController.h */,
 				162AD991201584030020B15B /* CollectionViewExampleViewController.m */,
 				DB6689A72050207700497BAF /* DCollectionViewController.h */,
@@ -393,7 +350,6 @@
 				DBA8E412230C39080096C5C1 /* Bluetooth */,
 				16D1F0F42043EC6C00A51709 /* demo.entitlements */,
 				16FB95601FF232AA002866C9 /* Examples */,
-				16FB95581FF231D3002866C9 /* YogaKit */,
 				16FB953A1FF10E73002866C9 /* Category */,
 				18B5CAF51EC73869008BBA18 /* Demo */,
 				1641B8521FCD0DB000A46AFB /* networking */,
@@ -409,7 +365,6 @@
 			isa = PBXGroup;
 			children = (
 				18B5CAF31EC73869008BBA18 /* demo.app */,
-				16A5B3C521918DAD0042B459 /* notify.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -467,7 +422,8 @@
 			children = (
 				DBA8E413230C392D0096C5C1 /* RFBluetoothManager.h */,
 				DBA8E414230C392D0096C5C1 /* RFBluetoothManager.m */,
-				DBADD6322312C77400F544AF /* RFBluetoothObserverProtocol.h */,
+				1682BCCE2313E13F005BF105 /* RFBluetoothObserver.h */,
+				1682BCCF2313E13F005BF105 /* RFBluetoothObserver.m */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -484,23 +440,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16A5B3C421918DAD0042B459 /* notify */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 16A5B3D021918DAD0042B459 /* Build configuration list for PBXNativeTarget "notify" */;
-			buildPhases = (
-				16A5B3C121918DAD0042B459 /* Sources */,
-				16A5B3C221918DAD0042B459 /* Frameworks */,
-				16A5B3C321918DAD0042B459 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = notify;
-			productName = notify;
-			productReference = 16A5B3C521918DAD0042B459 /* notify.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		18B5CAF21EC73869008BBA18 /* demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B5CB0A1EC73869008BBA18 /* Build configuration list for PBXNativeTarget "demo" */;
@@ -515,7 +454,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				16A5B3CC21918DAD0042B459 /* PBXTargetDependency */,
 			);
 			name = demo;
 			productName = demo;
@@ -531,16 +469,11 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Zen;
 				TargetAttributes = {
-					16A5B3C421918DAD0042B459 = {
-						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = PXRM6WVFC5;
-						ProvisioningStyle = Automatic;
-					};
 					18B5CAF21EC73869008BBA18 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = PXRM6WVFC5;
+						DevelopmentTeam = T2CSG8PK48;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -549,7 +482,7 @@
 								enabled = 0;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -569,19 +502,11 @@
 			projectRoot = "";
 			targets = (
 				18B5CAF21EC73869008BBA18 /* demo */,
-				16A5B3C421918DAD0042B459 /* notify */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		16A5B3C321918DAD0042B459 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18B5CAF11EC73869008BBA18 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -608,7 +533,6 @@
 				"${BUILT_PRODUCTS_DIR}/RFTypeface/RFTypeface.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -619,7 +543,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFTypeface.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -647,20 +570,10 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		16A5B3C121918DAD0042B459 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				16A5B3C921918DAD0042B459 /* NotificationService.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18B5CAEF1EC73869008BBA18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */,
-				16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */,
 				162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */,
 				DBADD6362312CA6B00F544AF /* RFBluetoothScanViewController.m in Sources */,
 				16FB956B1FF3B3B6002866C9 /* RFTokenUtil.m in Sources */,
@@ -671,6 +584,7 @@
 				164D38931FCFD3AB00C886CF /* RFTableViewController.m in Sources */,
 				162AD98E201583BF0020B15B /* UIColor+RT.m in Sources */,
 				18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */,
+				1682BCD02313E13F005BF105 /* RFBluetoothObserver.m in Sources */,
 				162AD998201584B30020B15B /* AJKSubregionEvaluationCell.m in Sources */,
 				16FB953D1FF10E93002866C9 /* UIView+RFCorner.m in Sources */,
 				162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */,
@@ -683,7 +597,6 @@
 				162AD98F201583BF0020B15B /* UIFont+RT.m in Sources */,
 				162AD995201584330020B15B /* AJKPeopleTagCell.m in Sources */,
 				1828CE471FFC7682004646E8 /* RFScreen.m in Sources */,
-				188744171FFB52A200558889 /* FlexBoxViewController.m in Sources */,
 				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				162AD992201584030020B15B /* CollectionViewExampleViewController.m in Sources */,
 				DB6B902A20E3020A000720D2 /* demo.swift in Sources */,
@@ -705,75 +618,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		16A5B3CC21918DAD0042B459 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 16A5B3C421918DAD0042B459 /* notify */;
-			targetProxy = 16A5B3CB21918DAD0042B459 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		16A5B3CE21918DAD0042B459 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PXRM6WVFC5;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = notify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.roger.demo.notify;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		16A5B3CF21918DAD0042B459 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PXRM6WVFC5;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = notify/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.roger.demo.notify;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		18B5CB081EC73869008BBA18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -865,20 +710,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = PXRM6WVFC5;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2CSG8PK48;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo/demo-pch.h";
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.roger.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = me.rogers.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0d9a95fb-32ed-4539-92a5-e8158d86b51c";
-				PROVISIONING_PROFILE_SPECIFIER = Demo;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utils/demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -892,20 +736,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = PXRM6WVFC5;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T2CSG8PK48;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo/demo-pch.h";
 				INFOPLIST_FILE = demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = me.roger.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = me.rogers.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0d9a95fb-32ed-4539-92a5-e8158d86b51c";
-				PROVISIONING_PROFILE_SPECIFIER = Demo;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utils/demo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -914,15 +757,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		16A5B3D021918DAD0042B459 /* Build configuration list for PBXNativeTarget "notify" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				16A5B3CE21918DAD0042B459 /* Debug */,
-				16A5B3CF21918DAD0042B459 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18B5CAEE1EC73869008BBA18 /* Build configuration list for PBXProject "demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

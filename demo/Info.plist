@@ -33,9 +33,7 @@
 	<string>使用位置</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>fetch</string>
-		<string>location</string>
-		<string>remote-notification</string>
+		<string>bluetooth-central</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

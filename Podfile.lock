@@ -23,10 +23,9 @@ PODS:
   - RFFoundation/Preprocessors (0.1.2)
   - RFTypeface (0.2.1):
     - RFFoundation
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - Yoga (1.9.0)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -36,20 +35,13 @@ DEPENDENCIES:
   - RFFoundation
   - RFTypeface
   - SDWebImage
-  - Yoga
   - YYModel
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - AFNetworking
-    - FLEX
-    - Masonry
-    - SDWebImage
-    - Yoga
-    - YYModel
-  https://github.com/Geph0rce/specs.git:
-    - RFFoundation
-    - RFTypeface
+EXTERNAL SOURCES:
+  FLEX:
+    :path: "/Users/qianjie/github/FLEX"
+
+CHECKOUT OPTIONS: 
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -57,10 +49,19 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   RFFoundation: b30559f8d2320a12fdba81fce010f05defd65543
   RFTypeface: 99ebf839ac59bbe6bf94fa7a8a69c3fd6a0a487e
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  Yoga: aaae8abea68951f60bee05f6277d3eed90bb91bb
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 78506549731e99cccffc688adb4231c6e910fe84
-
 COCOAPODS: 1.5.3
+
+PODFILE CHECKSUM: 672af8753fc2d5ed1860c0cf779315e29ef68a33
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - SDWebImage
+    - YYModel
+  https://github.com/Geph0rce/specs.git:
+    - RFFoundation
+    - RFTypeface

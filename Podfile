@@ -15,7 +15,6 @@ target 'demo' do
   pod 'SDWebImage'
   pod 'RFTypeface'
   pod 'RFFoundation'
-  pod 'FLEX', '~> 2.0', :configurations => ['Debug']
-  pod 'Yoga'
+  pod 'FLEX'
 
 end

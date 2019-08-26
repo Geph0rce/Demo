@@ -123,6 +123,12 @@ static NSString *const kRFTableViewCellId = @"RFTableViewCellId";
         photoModel.className = @"RFPhotoViewController";
         [array addObject:photoModel];
         _rowsArray = [array copy];
+        
+        RFTableModel *blueModel = [[RFTableModel alloc] init];
+        blueModel.title = @"RFBluetoothScanViewController";
+        blueModel.className = @"RFBluetoothScanViewController";
+        [array addObject:blueModel];
+        _rowsArray = [array copy];
     }
     return _rowsArray;
 }

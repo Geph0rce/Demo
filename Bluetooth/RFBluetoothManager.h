@@ -8,15 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "RFBluetoothObserver.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const RFBluetoothManagerBluetoothStateDidChange;
 
+
 @interface RFBluetoothManager : NSObject
 
 @property (nonatomic, readonly, strong) CBCentralManager *centralManager;
 @property (nonatomic, readonly, strong) NSMutableArray <CBPeripheral *> *peripherals;
+
++ (instancetype)sharedInstance;
+
+//- (void)scanDidDiscoverPeripheral:(RFBluetoothDidDiscoverPeripheralBlock)block;
+
+- (void)connect:(CBPeripheral *)peripheral;
 
 @end
 
