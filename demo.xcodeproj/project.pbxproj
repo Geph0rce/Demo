@@ -51,6 +51,8 @@
 		DB6689A92050207700497BAF /* DCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6689A82050207700497BAF /* DCollectionViewController.m */; };
 		DB6B902A20E3020A000720D2 /* demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6B902920E3020A000720D2 /* demo.swift */; };
 		DB71705420502C4E00B194E2 /* DCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71705320502C4E00B194E2 /* DCollectionViewCell.m */; };
+		DBA8E415230C392D0096C5C1 /* RFBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA8E414230C392D0096C5C1 /* RFBluetoothManager.m */; };
+		DBADD6362312CA6B00F544AF /* RFBluetoothScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,11 @@
 		DB6B902920E3020A000720D2 /* demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo.swift; sourceTree = "<group>"; };
 		DB71705220502C4E00B194E2 /* DCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCollectionViewCell.h; sourceTree = "<group>"; };
 		DB71705320502C4E00B194E2 /* DCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCollectionViewCell.m; sourceTree = "<group>"; };
+		DBA8E413230C392D0096C5C1 /* RFBluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothManager.h; sourceTree = "<group>"; };
+		DBA8E414230C392D0096C5C1 /* RFBluetoothManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothManager.m; sourceTree = "<group>"; };
+		DBADD6322312C77400F544AF /* RFBluetoothObserverProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothObserverProtocol.h; sourceTree = "<group>"; };
+		DBADD6342312CA6B00F544AF /* RFBluetoothScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothScanViewController.h; sourceTree = "<group>"; };
+		DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothScanViewController.m; sourceTree = "<group>"; };
 		EB862823D1EF326D5E0EF047 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,6 +329,7 @@
 		16FB95601FF232AA002866C9 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				DBADD6332312CA3D00F544AF /* Blue */,
 				1631D7D221100D16007FCFC4 /* PhotoViewController */,
 				167BA19321096FBF009B6031 /* PanGesture */,
 				16352E1E20D1137B00B0FADA /* CRFRiskManager */,
@@ -382,6 +390,7 @@
 		18B5CAEA1EC73869008BBA18 = {
 			isa = PBXGroup;
 			children = (
+				DBA8E412230C39080096C5C1 /* Bluetooth */,
 				16D1F0F42043EC6C00A51709 /* demo.entitlements */,
 				16FB95601FF232AA002866C9 /* Examples */,
 				16FB95581FF231D3002866C9 /* YogaKit */,
@@ -453,6 +462,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DBA8E412230C39080096C5C1 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				DBA8E413230C392D0096C5C1 /* RFBluetoothManager.h */,
+				DBA8E414230C392D0096C5C1 /* RFBluetoothManager.m */,
+				DBADD6322312C77400F544AF /* RFBluetoothObserverProtocol.h */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		DBADD6332312CA3D00F544AF /* Blue */ = {
+			isa = PBXGroup;
+			children = (
+				DBADD6342312CA6B00F544AF /* RFBluetoothScanViewController.h */,
+				DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */,
+			);
+			path = Blue;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,7 +510,6 @@
 				18B5CAF01EC73869008BBA18 /* Frameworks */,
 				18B5CAF11EC73869008BBA18 /* Resources */,
 				4C5A5723D7B09FC21DA1DA3E /* [CP] Embed Pods Frameworks */,
-				FF61384837373A9D47F70054 /* [CP] Copy Pods Resources */,
 				16D1F1052043EEE000A51709 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -617,21 +644,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF61384837373A9D47F70054 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -650,6 +662,7 @@
 				16FB955F1FF231D3002866C9 /* YGLayout.m in Sources */,
 				16FB955E1FF231D3002866C9 /* UIView+Yoga.m in Sources */,
 				162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */,
+				DBADD6362312CA6B00F544AF /* RFBluetoothScanViewController.m in Sources */,
 				16FB956B1FF3B3B6002866C9 /* RFTokenUtil.m in Sources */,
 				164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */,
 				16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */,
@@ -663,6 +676,7 @@
 				162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */,
 				167BA19621096FE0009B6031 /* RFPanGestureViewController.m in Sources */,
 				164D389C1FD0276A00C886CF /* UIWindow+FLEX.m in Sources */,
+				DBA8E415230C392D0096C5C1 /* RFBluetoothManager.m in Sources */,
 				16FB956E1FF3B5CB002866C9 /* RFTokenModel.m in Sources */,
 				1641B85D1FCD40FB00A46AFB /* NSString+RFNetworking.m in Sources */,
 				16FB95761FF5E946002866C9 /* TakeScreenShotViewController.m in Sources */,
