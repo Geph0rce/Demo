@@ -14,6 +14,7 @@
 		162AD998201584B30020B15B /* AJKSubregionEvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AD997201584B30020B15B /* AJKSubregionEvaluationCell.m */; };
 		162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E4F2071F39500CE14F2 /* RFRadarChartView.m */; };
 		162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */; };
+		162C8EBF23151969002ABDC2 /* RFBluetoothConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 162C8EBE23151969002ABDC2 /* RFBluetoothConfig.m */; };
 		1631D7D121100D10007FCFC4 /* RFPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7D021100D10007FCFC4 /* RFPhotoViewController.m */; };
 		1631D7D52110471F007FCFC4 /* RFPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7D42110471F007FCFC4 /* RFPhotoCollectionViewCell.m */; };
 		1631D7DB21116004007FCFC4 /* RFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7DA21116004007FCFC4 /* RFBaseViewController.m */; };
@@ -79,6 +80,8 @@
 		162B9E4F2071F39500CE14F2 /* RFRadarChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRadarChartView.m; sourceTree = "<group>"; };
 		162B9E512071FFF100CE14F2 /* RFRadarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFRadarChartViewController.h; sourceTree = "<group>"; };
 		162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRadarChartViewController.m; sourceTree = "<group>"; };
+		162C8EBD23151969002ABDC2 /* RFBluetoothConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothConfig.h; sourceTree = "<group>"; };
+		162C8EBE23151969002ABDC2 /* RFBluetoothConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothConfig.m; sourceTree = "<group>"; };
 		1631D7CF21100D10007FCFC4 /* RFPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFPhotoViewController.h; sourceTree = "<group>"; };
 		1631D7D021100D10007FCFC4 /* RFPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFPhotoViewController.m; sourceTree = "<group>"; };
 		1631D7D32110471F007FCFC4 /* RFPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFPhotoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -422,6 +425,8 @@
 			children = (
 				DBA8E413230C392D0096C5C1 /* RFBluetoothManager.h */,
 				DBA8E414230C392D0096C5C1 /* RFBluetoothManager.m */,
+				162C8EBD23151969002ABDC2 /* RFBluetoothConfig.h */,
+				162C8EBE23151969002ABDC2 /* RFBluetoothConfig.m */,
 				1682BCCE2313E13F005BF105 /* RFBluetoothObserver.h */,
 				1682BCCF2313E13F005BF105 /* RFBluetoothObserver.m */,
 			);
@@ -576,6 +581,7 @@
 			files = (
 				162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */,
 				DBADD6362312CA6B00F544AF /* RFBluetoothScanViewController.m in Sources */,
+				162C8EBF23151969002ABDC2 /* RFBluetoothConfig.m in Sources */,
 				16FB956B1FF3B3B6002866C9 /* RFTokenUtil.m in Sources */,
 				164D38991FCFDB9E00C886CF /* RFTableModel.m in Sources */,
 				16FB95791FF5E96E002866C9 /* RIFScreenShotActionView.m in Sources */,

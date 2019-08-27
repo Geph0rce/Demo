@@ -19,13 +19,12 @@ typedef NS_ENUM(NSUInteger, RFBluetoothConnectStatus) {
 };
 
 typedef void(^RFBluetoothStateDidChangeBlock)(CBCentralManager *centralManager);
-typedef void(^RFBluetoothDidDiscoverPeripheralBlock)(CBCentralManager *centralManager, CBPeripheral *peripheral, NSDictionary<NSString *,id> *advertisementData, NSNumber *RSSI);
 typedef void(^RFBluetoothConnectPeripheralBlock)(CBCentralManager *centralManager, CBPeripheral *peripheral, RFBluetoothConnectStatus status);
 
 @interface RFBluetoothObserver : NSObject
 
 @property (nonatomic, copy) RFBluetoothStateDidChangeBlock stateDidChange;
-
+@property (nonatomic, copy) RFBluetoothConnectPeripheralBlock connectStatusDidChange;
 
 @end
 
