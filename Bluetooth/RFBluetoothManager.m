@@ -8,8 +8,6 @@
 
 #import "RFBluetoothManager.h"
 
-NSString *const RFBluetoothManagerBluetoothStateDidChange = @"RFBluetoothManagerBluetoothStateDidChange";
-
 @interface RFBluetoothManager () <CBCentralManagerDelegate>
 
 @property (nonatomic, readwrite, strong) CBCentralManager *centralManager;
@@ -109,7 +107,9 @@ NSString *const RFBluetoothManagerBluetoothStateDidChange = @"RFBluetoothManager
         [self.peripherals addObject:peripheral];
     }
     
-    !self.didDiscoverPeripheral ?: self.didDiscoverPeripheral(central, peripheral, advertisementData, RSSI);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        !self.didDiscoverPeripheral ?: self.didDiscoverPeripheral(central, peripheral, advertisementData, RSSI);
+    });
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {

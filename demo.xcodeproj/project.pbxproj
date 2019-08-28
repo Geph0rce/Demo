@@ -15,9 +15,9 @@
 		162B9E502071F39500CE14F2 /* RFRadarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E4F2071F39500CE14F2 /* RFRadarChartView.m */; };
 		162B9E532071FFF100CE14F2 /* RFRadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */; };
 		162C8EBF23151969002ABDC2 /* RFBluetoothConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 162C8EBE23151969002ABDC2 /* RFBluetoothConfig.m */; };
+		162C8EC223162B79002ABDC2 /* RFBluetoothPeripheralRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 162C8EC123162B79002ABDC2 /* RFBluetoothPeripheralRow.m */; };
 		1631D7D121100D10007FCFC4 /* RFPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7D021100D10007FCFC4 /* RFPhotoViewController.m */; };
 		1631D7D52110471F007FCFC4 /* RFPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7D42110471F007FCFC4 /* RFPhotoCollectionViewCell.m */; };
-		1631D7DB21116004007FCFC4 /* RFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1631D7DA21116004007FCFC4 /* RFBaseViewController.m */; };
 		16352E2120D113AF00B0FADA /* RFRiskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2020D113AF00B0FADA /* RFRiskManager.m */; };
 		16352E2620D1151B00B0FADA /* RFElevationDetectionComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 16352E2520D1151B00B0FADA /* RFElevationDetectionComponent.m */; };
 		1641B8591FCD2F8600A46AFB /* RFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1641B8581FCD2F8600A46AFB /* RFNetworkManager.m */; };
@@ -82,12 +82,12 @@
 		162B9E522071FFF100CE14F2 /* RFRadarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRadarChartViewController.m; sourceTree = "<group>"; };
 		162C8EBD23151969002ABDC2 /* RFBluetoothConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothConfig.h; sourceTree = "<group>"; };
 		162C8EBE23151969002ABDC2 /* RFBluetoothConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothConfig.m; sourceTree = "<group>"; };
+		162C8EC023162B79002ABDC2 /* RFBluetoothPeripheralRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothPeripheralRow.h; sourceTree = "<group>"; };
+		162C8EC123162B79002ABDC2 /* RFBluetoothPeripheralRow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBluetoothPeripheralRow.m; sourceTree = "<group>"; };
 		1631D7CF21100D10007FCFC4 /* RFPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFPhotoViewController.h; sourceTree = "<group>"; };
 		1631D7D021100D10007FCFC4 /* RFPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFPhotoViewController.m; sourceTree = "<group>"; };
 		1631D7D32110471F007FCFC4 /* RFPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		1631D7D42110471F007FCFC4 /* RFPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFPhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		1631D7D921116004007FCFC4 /* RFBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBaseViewController.h; sourceTree = "<group>"; };
-		1631D7DA21116004007FCFC4 /* RFBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFBaseViewController.m; sourceTree = "<group>"; };
 		16352E1F20D113AF00B0FADA /* RFRiskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFRiskManager.h; sourceTree = "<group>"; };
 		16352E2020D113AF00B0FADA /* RFRiskManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFRiskManager.m; sourceTree = "<group>"; };
 		16352E2420D1151B00B0FADA /* RFElevationDetectionComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFElevationDetectionComponent.h; sourceTree = "<group>"; };
@@ -386,8 +386,6 @@
 				18B5CB021EC73869008BBA18 /* Assets.xcassets */,
 				18B5CB071EC73869008BBA18 /* Info.plist */,
 				18B5CAF61EC73869008BBA18 /* Supporting Files */,
-				1631D7D921116004007FCFC4 /* RFBaseViewController.h */,
-				1631D7DA21116004007FCFC4 /* RFBaseViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -438,6 +436,8 @@
 			children = (
 				DBADD6342312CA6B00F544AF /* RFBluetoothScanViewController.h */,
 				DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */,
+				162C8EC023162B79002ABDC2 /* RFBluetoothPeripheralRow.h */,
+				162C8EC123162B79002ABDC2 /* RFBluetoothPeripheralRow.m */,
 			);
 			path = Blue;
 			sourceTree = "<group>";
@@ -534,6 +534,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/RFCommonUI/RFCommonUI.framework",
 				"${BUILT_PRODUCTS_DIR}/RFFoundation/RFFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/RFTypeface/RFTypeface.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -544,6 +545,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFCommonUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFTypeface.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -606,10 +608,10 @@
 				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				162AD992201584030020B15B /* CollectionViewExampleViewController.m in Sources */,
 				DB6B902A20E3020A000720D2 /* demo.swift in Sources */,
-				1631D7DB21116004007FCFC4 /* RFBaseViewController.m in Sources */,
 				16FB95681FF33E3A002866C9 /* RFClientInfo.m in Sources */,
 				1631D7D52110471F007FCFC4 /* RFPhotoCollectionViewCell.m in Sources */,
 				167F4E501FE7D7820020C394 /* UIViewController+RFNetworking.m in Sources */,
+				162C8EC223162B79002ABDC2 /* RFBluetoothPeripheralRow.m in Sources */,
 				DB42038A205B390500A7E25E /* DemoHitTestView.m in Sources */,
 				168A0DE22015C0680020A8C0 /* AIFMasonryMacro.m in Sources */,
 				16352E2120D113AF00B0FADA /* RFRiskManager.m in Sources */,

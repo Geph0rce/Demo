@@ -16,6 +16,26 @@ PODS:
     - AFNetworking/NSURLSession
   - FLEX (2.4.0)
   - Masonry (1.1.0)
+  - RFCommonUI (0.1.1):
+    - Masonry
+    - RFCommonUI/Categories (= 0.1.1)
+    - RFCommonUI/TableRow (= 0.1.1)
+    - RFCommonUI/ViewController (= 0.1.1)
+    - RFCommonUI/Views (= 0.1.1)
+    - RFFoundation
+  - RFCommonUI/Categories (0.1.1):
+    - Masonry
+    - RFFoundation
+  - RFCommonUI/TableRow (0.1.1):
+    - Masonry
+    - RFFoundation
+  - RFCommonUI/ViewController (0.1.1):
+    - Masonry
+    - RFCommonUI/Categories
+    - RFFoundation
+  - RFCommonUI/Views (0.1.1):
+    - Masonry
+    - RFFoundation
   - RFFoundation (0.1.2):
     - RFFoundation/Categories (= 0.1.2)
     - RFFoundation/Preprocessors (= 0.1.2)
@@ -32,6 +52,7 @@ DEPENDENCIES:
   - AFNetworking
   - FLEX (~> 2.0)
   - Masonry
+  - RFCommonUI
   - RFFoundation
   - RFTypeface
   - SDWebImage
@@ -47,6 +68,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  RFCommonUI: 78d86d68ed1cdb3646c9e00645da70eecc891e10
   RFFoundation: b30559f8d2320a12fdba81fce010f05defd65543
   RFTypeface: 99ebf839ac59bbe6bf94fa7a8a69c3fd6a0a487e
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
@@ -54,9 +76,11 @@ SPEC CHECKSUMS:
 
 COCOAPODS: 1.5.3
 
-PODFILE CHECKSUM: 672af8753fc2d5ed1860c0cf779315e29ef68a33
+PODFILE CHECKSUM: 3d431314b993d6d9e5ecf42b1f070c669796aeb0
 
 SPEC REPOS:
+  https://gitee.com/Geph0rce/specs.git:
+    - RFCommonUI
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Masonry

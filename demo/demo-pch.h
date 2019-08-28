@@ -24,6 +24,7 @@
 #import "UIColor+RT.h"
 #import "AIFMasonryMacro.h"
 #import <RFTypeface/RFTypeface.h>
+#import <RFCommonUI/RFCommonUI.h>
 #import "RFBaseViewController.h"
 
 #pragma mark - defines

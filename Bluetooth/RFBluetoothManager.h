@@ -13,11 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString *const RFBluetoothManagerBluetoothStateDidChange;
-
 typedef void(^RFBluetoothDidDiscoverPeripheralBlock)(CBCentralManager *centralManager, CBPeripheral *peripheral, NSDictionary<NSString *,id> *advertisementData, NSNumber *RSSI);
 typedef void(^RFBluetoothManagerResponseBlock)(CBPeripheral *peripheral, NSData * _Nullable data, NSError * _Nullable error);
 
+typedef void(^RFBluetoothDidDiscoverCharacteristicBlock)();
 
 @interface RFBluetoothManager : NSObject
 

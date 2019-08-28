@@ -3,6 +3,7 @@ platform :ios, '8.0'
 
 source 'https://github.com/Geph0rce/specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitee.com/Geph0rce/specs.git'
 
 target 'demo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -15,6 +16,7 @@ target 'demo' do
   pod 'SDWebImage'
   pod 'RFTypeface'
   pod 'RFFoundation'
+  pod 'RFCommonUI'
   pod 'FLEX'
 
 end
