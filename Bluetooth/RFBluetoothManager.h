@@ -23,7 +23,7 @@ typedef void(^RFBluetoothDidDiscoverCharacteristicBlock)();
 @property (nonatomic, readonly, strong) CBCentralManager *centralManager;
 @property (nonatomic, readonly, strong) NSMutableArray <CBPeripheral *> *peripherals;
 
-@property (nonatomic, assign) RFBluetoothConfig *config;
+@property (nonatomic, strong) RFBluetoothConfig *config;
 
 + (instancetype)sharedInstance;
 

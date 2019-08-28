@@ -7,10 +7,13 @@
 //
 
 #import <RFCommonUI/RFCommonUI.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RFBluetoothPeripheralRow : RFTableRow
+
+@property (nonatomic, strong) CBPeripheral *peripheral;
 
 @property (nonatomic, copy) NSString *title;
 

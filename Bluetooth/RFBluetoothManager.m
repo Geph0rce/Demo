@@ -8,7 +8,7 @@
 
 #import "RFBluetoothManager.h"
 
-@interface RFBluetoothManager () <CBCentralManagerDelegate>
+@interface RFBluetoothManager () <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property (nonatomic, readwrite, strong) CBCentralManager *centralManager;
 @property (nonatomic, readwrite, strong) NSMutableArray <CBPeripheral *> *peripherals;
@@ -70,10 +70,12 @@
 
 - (void)scanDidDiscoverPeripheral:(RFBluetoothDidDiscoverPeripheralBlock)block {
     self.didDiscoverPeripheral = block;
-    [self.centralManager scanForPeripheralsWithServices:nil options:nil];
+    CBUUID *uuid = [CBUUID UUIDWithString:self.config.serviceUUID];
+    [self.centralManager scanForPeripheralsWithServices:@[ uuid ] options:nil];
 }
 
 - (void)connect:(CBPeripheral *)peripheral {
+    peripheral.delegate = self;
     [self.centralManager connectPeripheral:peripheral options:nil];
 }
 
@@ -197,8 +199,9 @@
 
 + (RFBluetoothConfig *)defaultConfig {
     RFBluetoothConfig *config = [[RFBluetoothConfig alloc] init];
-    config.readCharacteristicUUID = @"49535343-1E4D-4BD9-BA61-23C647249616";
-    config.writeCharacteristicUUID = @"49535343-8841-43F4-A8D4-ECBE34729BB3";
+    config.serviceUUID = @"FF00";
+    config.readCharacteristicUUID = @"FF01"; //@"49535343-1E4D-4BD9-BA61-23C647249616";
+    config.writeCharacteristicUUID = @"FF02"; //@"49535343-8841-43F4-A8D4-ECBE34729BB3";
     return config;
 }
 

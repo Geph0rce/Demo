@@ -47,8 +47,14 @@
         if (index == NSNotFound) {
             [self.periperals addObject:peripheral];
             RFBluetoothPeripheralRow *row = [[RFBluetoothPeripheralRow alloc] init];
+            row.peripheral = peripheral;
             row.title = [NSString stringWithFormat:@"%@(%@)", peripheral.name ?: @"Unknow", RSSI];
             [self.dataSection addRow:row];
+            weakify(self, row);
+            row.selectedBlock = ^(RFTableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+                strongify(self, row);
+                [[RFBluetoothManager sharedInstance] connect:row.peripheral];
+            };
             [self.tableView reloadData];
         } else {
             RFBluetoothPeripheralRow *row = [self.dataSection rowAtIndex:index];

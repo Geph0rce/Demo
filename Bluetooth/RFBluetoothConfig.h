@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RFBluetoothConfig : NSObject
 
+@property (nonatomic, copy) NSString *serviceUUID;
 @property (nonatomic, copy) NSString *readCharacteristicUUID;
 @property (nonatomic, copy) NSString *writeCharacteristicUUID;
 
