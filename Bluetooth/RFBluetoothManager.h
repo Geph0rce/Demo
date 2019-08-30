@@ -13,17 +13,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^RFBluetoothDidDiscoverPeripheralBlock)(CBCentralManager *centralManager, CBPeripheral *peripheral, NSDictionary<NSString *,id> *advertisementData, NSNumber *RSSI);
-typedef void(^RFBluetoothManagerResponseBlock)(CBPeripheral *peripheral, NSData * _Nullable data, NSError * _Nullable error);
-
-typedef void(^RFBluetoothDidDiscoverCharacteristicBlock)();
-
 @interface RFBluetoothManager : NSObject
 
 @property (nonatomic, readonly, strong) CBCentralManager *centralManager;
-@property (nonatomic, readonly, strong) NSMutableArray <CBPeripheral *> *peripherals;
 
-@property (nonatomic, strong) RFBluetoothConfig *config;
+// connected peripheral
+@property (nonatomic, strong, nullable) CBPeripheral *peripheral;
 
 + (instancetype)sharedInstance;
 
@@ -31,11 +26,13 @@ typedef void(^RFBluetoothDidDiscoverCharacteristicBlock)();
 
 - (void)removeBluetoothObserver:(RFBluetoothObserver *)observer;
 
-- (void)scanDidDiscoverPeripheral:(RFBluetoothDidDiscoverPeripheralBlock)block;
+- (void)scan:(NSArray <CBUUID *> * _Nullable)serviceUUIDs options:(NSDictionary * _Nullable)options ;
 
 - (void)connect:(CBPeripheral *)peripheral;
 
-- (void)write:(NSData *)data response:(RFBluetoothManagerResponseBlock)response;
+- (void)disconnect;
+
+- (void)write:(NSData *)data charateristic:(CBCharacteristic *)characteristic;
 
 @end
 

@@ -10,7 +10,8 @@
 #import "RFBluetoothPeripheralRow.h"
 #import "RFBluetoothDataManager.h"
 #import "RFBluetoothManager.h"
-
+#import "MBProgressHUD.h"
+#import "RFBluetoothPeripheralViewController.h"
 
 @interface RFBluetoothScanViewController ()
 
@@ -21,10 +22,16 @@
 @property (nonatomic, strong) NSMutableArray <CBPeripheral *> *periperals;
 
 @property (nonatomic, strong) RFBluetoothDataManager *manager;
+@property (nonatomic, strong) MBProgressHUD *hud;
+
 
 @end
 
 @implementation RFBluetoothScanViewController
+
+- (void)dealloc {
+    [self.manager disconnect];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,9 +44,6 @@
     
     FORBIDDEN_ADJUST_SCROLLVIEW_INSETS(self, self.tableView);
     [self refresh];
-    [self.manager requestVoltageData:^(RFBluetoothDataManager * _Nonnull manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error) {
-        
-    }];
 }
 
 - (void)refresh {
@@ -47,7 +51,8 @@
     [self.periperals removeAllObjects];
     [self.dataSection removeAllChildren];
     [self.tableView reloadData];
-    [[RFBluetoothManager sharedInstance] scanDidDiscoverPeripheral:^(CBCentralManager * _Nonnull centralManager, CBPeripheral * _Nonnull peripheral, NSDictionary<NSString *,id> * _Nonnull advertisementData, NSNumber * _Nonnull RSSI) {
+    
+    [self.manager scanDidDiscoverPeripheral:^(CBCentralManager * _Nonnull centralManager, CBPeripheral * _Nonnull peripheral, NSDictionary<NSString *,id> * _Nonnull advertisementData, NSNumber * _Nonnull RSSI) {
         strongify(self);
         NSUInteger index = [self.periperals indexOfObject:peripheral];
         if (index == NSNotFound) {
@@ -59,7 +64,7 @@
             weakify(self, row);
             row.selectedBlock = ^(RFTableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
                 strongify(self, row);
-                [[RFBluetoothManager sharedInstance] connect:row.peripheral];
+                [self connect:row.peripheral];
             };
             [self.tableView reloadData];
         } else {
@@ -70,6 +75,18 @@
     }];
 }
 
+
+- (void)connect:(CBPeripheral *)peripheral {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    weakify(self);
+    [self.manager connect:peripheral completion:^(RFBluetoothDataManager * _Nonnull manager, BOOL success) {
+        strongify(self);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        RFBluetoothPeripheralViewController *controller = [[RFBluetoothPeripheralViewController alloc] init];
+        controller.manager = self.manager;
+        [self.navigationController pushViewController:controller animated:YES];
+    }];
+}
 
 #pragma mark - Custom Top Bar
 
@@ -118,6 +135,14 @@
         _manager = [[RFBluetoothDataManager alloc] init];
     }
     return _manager;
+}
+
+- (MBProgressHUD *)hud {
+    if (!_hud) {
+        _hud = [[MBProgressHUD alloc] init];
+        _hud.mode = MBProgressHUDModeIndeterminate;
+    }
+    return _hud;
 }
 
 @end

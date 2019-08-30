@@ -13,17 +13,24 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class RFBluetoothDataManager;
-typedef void(^RFBluetoothDataManagerBlock)(RFBluetoothDataManager *manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error);
+typedef void(^RFBluetoothDataManagerPackageBlock)(RFBluetoothDataManager *manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error);
+typedef void(^RFBluetoothDataManagerConnectBlock)(RFBluetoothDataManager *manager, BOOL success);
 
 @interface RFBluetoothDataManager : NSObject
 
 @property (nonatomic, readonly, strong) RFBluetoothManager *bluetooth;
 
-- (void)requestVoltageData:(RFBluetoothDataManagerBlock)completion;
+- (void)scanDidDiscoverPeripheral:(RFBluetoothDidDiscoverPeripheralBlock)didDiscoverPeripheral;
 
-- (void)requestCurrentData:(RFBluetoothDataManagerBlock)completion;
+- (void)connect:(CBPeripheral *)peripheral completion:(RFBluetoothDataManagerConnectBlock)completion;
 
-- (void)requestBatteryPowerData:(RFBluetoothDataManagerBlock)completion;
+- (void)disconnect;
+
+- (void)requestVoltageData:(RFBluetoothDataManagerPackageBlock)completion;
+
+- (void)requestCurrentData:(RFBluetoothDataManagerPackageBlock)completion;
+
+- (void)requestBatteryPowerData:(RFBluetoothDataManagerPackageBlock)completion;
 
 @end
 

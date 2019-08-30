@@ -18,5 +18,6 @@ target 'demo' do
   pod 'RFFoundation'
   pod 'RFCommonUI'
   pod 'FLEX'
+  pod 'MBProgressHUD'
 
 end

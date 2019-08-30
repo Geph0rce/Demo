@@ -52,8 +52,12 @@ static UInt8 const kRFBluetoothPackageEnd = 0xF5;
 }
 
 - (RFBluetoothPackageEnd)end {
-    if (self.rawData.length >= 8) {
-        [self.rawData getBytes:&_end range:NSMakeRange(self.rawData.length - 2, 1)];
+    RFBluetoothPackageBegin begin = self.begin;
+    if (self.rawData.length >= 8 && begin.length > 0) {
+        NSInteger loction = (sizeof(begin) + begin.length - 1);
+        if (self.rawData.length > loction) {
+            [self.rawData getBytes:&_end range:NSMakeRange(loction, 1)];
+        }
     }
     return _end;
 }
@@ -69,15 +73,7 @@ static UInt8 const kRFBluetoothPackageEnd = 0xF5;
     }
     
     BOOL endValid = (end.end == kRFBluetoothPackageEnd);
-    
-    BOOL dataLengthValid = NO;
-    if (self.rawData.length >= 8) {
-        UInt8 length = begin.length;
-        UInt8 dataLength = (self.rawData.length - 4);
-        dataLengthValid = (length == dataLength);
-    }
-    
-    return beginValid && endValid && dataLengthValid;
+    return beginValid && endValid;
 }
 
 @end

@@ -24,15 +24,18 @@ typedef void(^RFBluetoothConnectPeripheralBlock)(CBCentralManager *centralManage
 typedef void(^RFDidDiscoverCharacteristicsForServiceBlock)(CBPeripheral *peripheral, CBService *service, NSError *error);
 typedef void(^RFBluetoothDidUpdateValueForCharacteristicBlock)(CBPeripheral *peripheral, CBCharacteristic *characteristic, NSError *error);
 typedef void(^RFBluetoothDidWriteValueForCharacteristicBlock)(CBPeripheral *peripheral, CBCharacteristic *characteristic, NSError *error);
+typedef void(^RFBluetoothErrorBlock)(NSError *error);
 
 
 @interface RFBluetoothObserver : NSObject
 
 @property (nonatomic, copy) RFBluetoothStateDidChangeBlock stateDidChange;
+@property (nonatomic, copy) RFBluetoothDidDiscoverPeripheralBlock didDiscoverPeripheral;
 @property (nonatomic, copy) RFBluetoothConnectPeripheralBlock connectStatusDidChange;
 @property (nonatomic, copy) RFDidDiscoverCharacteristicsForServiceBlock didDiscoverCharacteristics;
 @property (nonatomic, copy) RFBluetoothDidUpdateValueForCharacteristicBlock didUpdateValue;
 @property (nonatomic, copy) RFBluetoothDidWriteValueForCharacteristicBlock didWriteValue;
+@property (nonatomic, copy) RFBluetoothErrorBlock onError;
 
 @end
 
