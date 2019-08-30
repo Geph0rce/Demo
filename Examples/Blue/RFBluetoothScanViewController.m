@@ -8,6 +8,7 @@
 
 #import "RFBluetoothScanViewController.h"
 #import "RFBluetoothPeripheralRow.h"
+#import "RFBluetoothDataManager.h"
 #import "RFBluetoothManager.h"
 
 
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) RFTableDataSource *dataSource;
 
 @property (nonatomic, strong) NSMutableArray <CBPeripheral *> *periperals;
+
+@property (nonatomic, strong) RFBluetoothDataManager *manager;
 
 @end
 
@@ -34,6 +37,9 @@
     
     FORBIDDEN_ADJUST_SCROLLVIEW_INSETS(self, self.tableView);
     [self refresh];
+    [self.manager requestVoltageData:^(RFBluetoothDataManager * _Nonnull manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error) {
+        
+    }];
 }
 
 - (void)refresh {
@@ -105,6 +111,13 @@
         _periperals = [[NSMutableArray alloc] init];
     }
     return _periperals;
+}
+
+- (RFBluetoothDataManager *)manager {
+    if (!_manager) {
+        _manager = [[RFBluetoothDataManager alloc] init];
+    }
+    return _manager;
 }
 
 @end
