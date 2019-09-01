@@ -44,9 +44,9 @@ PODS:
   - RFFoundation/Preprocessors (0.1.2)
   - RFTypeface (0.2.1):
     - RFFoundation
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -82,7 +82,7 @@ SPEC CHECKSUMS:
   RFCommonUI: 78d86d68ed1cdb3646c9e00645da70eecc891e10
   RFFoundation: b30559f8d2320a12fdba81fce010f05defd65543
   RFTypeface: 99ebf839ac59bbe6bf94fa7a8a69c3fd6a0a487e
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: c4e1561be7eea57de07b7eb2adb63e8ee178a5c0

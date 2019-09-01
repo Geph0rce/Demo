@@ -13,6 +13,23 @@ static UInt8 const kRFBluetoothPackageId = 0xD1;
 static UInt8 const kRFBluetoothPackageAddress = 0x01;
 static UInt8 const kRFBluetoothPackageEnd = 0xF5;
 
+// 电压 - 状态
+typedef NS_OPTIONS(UInt8, RFBluetoothVoltageStatus) {
+    RFBluetoothVoltageStatusDischarge = 1 << 0,
+    RFBluetoothVoltageStatusCharge = 1 << 1,
+    RFBluetoothVoltageStatusMosTemperature = 1 << 4,
+    RFBluetoothVoltageStatusEnvironmentTemperature = 1 << 5
+};
+
+// 电压 - 过压状态
+typedef NS_OPTIONS(UInt8, RFBluetoothOvervoltageStatus) {
+    RFBluetoothOvervoltageStatusCell = 1 << 0,
+    RFBluetoothOvervoltageStatusTotal = 1 << 1,
+    RFBluetoothOvervoltageStatusFull = 1 << 4
+};
+
+
+
 @interface RFBluetoothPackage ()
 
 @property (nonatomic, readwrite, strong) NSData *rawData;
