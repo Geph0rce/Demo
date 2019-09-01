@@ -59,7 +59,34 @@ typedef NS_OPTIONS(UInt8, RFBluetoothOvervoltageStatus) {
         }
     }
     self.rawData = md.copy;
+    
+    DLog(@"rawData: %@", self.rawData);
 }
+
+- (void)parserData {
+    
+}
+
+
+- (Byte)byteAtIndex:(UInt8)index {
+    Byte byte = 0;
+    if (self.rawData.length > index) {
+        [self.rawData getBytes:&byte range:NSMakeRange(index, 1)];
+    }
+    return byte;
+}
+
+- (NSUInteger)integerAtIndex:(UInt8)index {
+    NSUInteger integer = 0;
+    if (self.rawData.length > (index + 1)) {
+        Byte bytes[2] = {0};
+        [self.rawData getBytes:&bytes range:NSMakeRange(index, 2)];
+        integer = bytes[0] << 8 | bytes[1];
+    }
+    return integer;
+}
+
+#pragma mark - Getters
 
 - (RFBluetoothPackageBegin)begin {
     if (self.rawData.length >= 8) {
@@ -100,7 +127,81 @@ typedef NS_OPTIONS(UInt8, RFBluetoothOvervoltageStatus) {
 
 @end
 
+@implementation RFCellVoltage
+
+@end
+
 @implementation RFVoltagePackage
+
+- (void)parserData {
+    if (!self.valid) {
+        return;
+    }
+    
+    self.cellCount = [self byteAtIndex:6];
+    self.temperatureDetectorCount = [self byteAtIndex:7];
+    
+    NSMutableArray *cells = [[NSMutableArray alloc] init];
+    for (UInt8 i = 0; i < self.cellCount; i++) {
+        UInt8 index = 9 + 2 * i;
+        RFCellVoltage *cell = [[RFCellVoltage alloc] init];
+        cell.voltage = [self integerAtIndex:index];
+        [cells addObject:cell];
+    }
+    
+    self.cells = cells.copy;
+    DLog(@"cells: %@", @(cells.count));
+}
+
+#pragma mark - Getters
+
+- (NSUInteger)maxVoltage {
+    if (_maxVoltage == 0) {
+       NSArray <RFCellVoltage *> *cells = [self.cells sortedArrayUsingComparator:^NSComparisonResult(RFCellVoltage *  _Nonnull obj1, RFCellVoltage *  _Nonnull obj2) {
+           return obj1.voltage > obj2.voltage ? NSOrderedAscending : NSOrderedDescending;
+        }];
+        
+        if (cells.count) {
+            _maxVoltage = cells[0].voltage;
+        }
+    }
+    return _maxVoltage;
+}
+
+- (NSUInteger)minVoltage {
+    if (_minVoltage == 0) {
+        NSArray <RFCellVoltage *> *cells = [self.cells sortedArrayUsingComparator:^NSComparisonResult(RFCellVoltage *  _Nonnull obj1, RFCellVoltage *  _Nonnull obj2) {
+            return obj1.voltage < obj2.voltage ? NSOrderedAscending : NSOrderedDescending;
+        }];
+        
+        if (cells.count) {
+            _minVoltage = cells[0].voltage;
+        }
+    }
+    return _minVoltage;
+}
+
+- (NSUInteger)averageVoltage {
+    if (_averageVoltage == 0 && self.cellCount > 0) {
+        _averageVoltage = roundf(self.totalVoltage * 1.0 / self.cellCount);
+    }
+    return _averageVoltage;
+}
+
+- (NSUInteger)totalVoltage {
+    if (_totalVoltage == 0) {
+        __block NSUInteger total = 0;
+        [self.cells enumerateObjectsUsingBlock:^(RFCellVoltage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            total += obj.voltage;
+        }];
+        _totalVoltage = total;
+    }
+    return _totalVoltage;
+}
+
+- (NSUInteger)differenceVoltage {
+    return (self.maxVoltage - self.minVoltage);
+}
 
 @end
 

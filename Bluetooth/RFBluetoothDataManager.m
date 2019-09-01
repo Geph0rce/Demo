@@ -164,6 +164,8 @@
             [self.package appendData:characteristic.value];
             
             if (self.package.valid) {
+                DLog(@"receive package: %@", self.package.rawData);
+                [self.package parserData];
                 !self.didReceivePackage ?: self.didReceivePackage(self, self.package, error);
                 self.package = nil;
                 self.didReceivePackage = nil;

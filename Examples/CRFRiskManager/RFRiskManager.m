@@ -26,7 +26,7 @@ static NSTimeInterval const kRFRiskManagerUploadTimeInterval = 15.0;
 RFSingleton(RFRiskManager)
 
 + (void)load {
-    [RFRiskManager sharedInstance];
+    
 }
 
 - (instancetype)init {

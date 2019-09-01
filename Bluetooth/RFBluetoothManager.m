@@ -63,16 +63,16 @@
 }
 
 - (void)connect:(CBPeripheral *)peripheral {
-    if (self.peripheral) {
-        [self disconnect];
-    }
+    [self disconnect];
     peripheral.delegate = self;
     [self.centralManager connectPeripheral:peripheral options:nil];
 }
 
 - (void)disconnect {
-    [self.centralManager cancelPeripheralConnection:self.peripheral];
-    self.peripheral = nil;
+    if (self.peripheral) {
+        [self.centralManager cancelPeripheralConnection:self.peripheral];
+        self.peripheral = nil;
+    }
 }
 
 - (void)write:(NSData *)data charateristic:(CBCharacteristic *)characteristic {

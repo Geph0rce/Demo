@@ -33,9 +33,36 @@ typedef struct {
 
 - (void)appendData:(NSData *)data;
 
+- (void)parserData;
+
+- (Byte)byteAtIndex:(UInt8)index;
+
+- (NSUInteger)integerAtIndex:(UInt8)index;
+
+@end
+
+@interface RFCellVoltage : NSObject
+
+@property (nonatomic, assign) NSInteger voltage;
+
 @end
 
 @interface RFVoltagePackage : RFBluetoothPackage
+
+// 电池(电芯)串数
+@property (nonatomic, assign) UInt8 cellCount;
+
+// 温度探头数
+@property (nonatomic, assign) UInt8 temperatureDetectorCount;
+
+// 所有电芯(电压)
+@property (nonatomic, strong) NSArray <RFCellVoltage *> *cells;
+
+@property (nonatomic, assign) NSUInteger maxVoltage;
+@property (nonatomic, assign) NSUInteger minVoltage;
+@property (nonatomic, assign) NSUInteger averageVoltage;
+@property (nonatomic, assign) NSUInteger totalVoltage;
+@property (nonatomic, assign) NSUInteger differenceVoltage;
 
 @end
 
