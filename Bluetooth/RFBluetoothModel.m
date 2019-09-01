@@ -137,7 +137,7 @@ typedef NS_OPTIONS(UInt8, RFBluetoothOvervoltageStatus) {
     if (!self.valid) {
         return;
     }
-    
+   
     self.cellCount = [self byteAtIndex:6];
     self.temperatureDetectorCount = [self byteAtIndex:7];
     
@@ -211,5 +211,39 @@ typedef NS_OPTIONS(UInt8, RFBluetoothOvervoltageStatus) {
 
 
 @implementation RFBatteryPowerPackage
+
+- (void)parserData {
+    if (!self.valid) {
+        return;
+    }
+    
+    self.id_ = [self byteAtIndex:1];
+    self.soc = [self byteAtIndex:7];
+    self.recycleCount = [self integerAtIndex:9];
+    
+    self.designCapacity = [self capacity:12];
+    self.fullCapacity = [self capacity:18];
+    self.leftCapacity = [self capacity:24];
+    
+    self.dischargeLeftTime = [self integerAtIndex:30];
+    self.rechargeLeftTime = [self integerAtIndex:33];
+    self.chargeInterval = [self integerAtIndex:36];
+    self.chargeIntervalMax = [self integerAtIndex:38];
+    self.totalVoltage = [self integerAtIndex:47];
+    self.maxVoltage = [self integerAtIndex:49];
+    self.minVoltage = [self integerAtIndex:51];
+}
+
+#pragma mark - Utils
+
+- (UInt32)capacity:(UInt8)index {
+    UInt32 capacity = 0;
+    if (self.rawData.length > (index + 4)) {
+        Byte bytes[5] = {0};
+        [self.rawData getBytes:&bytes range:NSMakeRange(index, 5)];
+        capacity = bytes[0] << 24 | bytes[1] << 16 | bytes[3] << 8 | bytes[4];
+    }
+    return capacity;
+}
 
 @end

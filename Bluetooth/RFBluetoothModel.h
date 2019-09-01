@@ -73,6 +73,20 @@ typedef struct {
 
 @interface RFBatteryPowerPackage : RFBluetoothPackage
 
+@property (nonatomic, assign) UInt8 id_;
+@property (nonatomic, assign) UInt8 soc;
+@property (nonatomic, assign) UInt16 recycleCount;
+@property (nonatomic, assign) UInt32 designCapacity;
+@property (nonatomic, assign) UInt32 fullCapacity;
+@property (nonatomic, assign) UInt32 leftCapacity;
+@property (nonatomic, assign) UInt16 dischargeLeftTime;
+@property (nonatomic, assign) UInt16 rechargeLeftTime;
+@property (nonatomic, assign) UInt16 chargeInterval;
+@property (nonatomic, assign) UInt16 chargeIntervalMax;
+@property (nonatomic, assign) UInt16 totalVoltage;
+@property (nonatomic, assign) UInt16 maxVoltage;
+@property (nonatomic, assign) UInt16 minVoltage;
+
 @end
 
 @interface RFBluetoothModel : NSObject
