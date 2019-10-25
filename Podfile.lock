@@ -14,9 +14,10 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - FLEX (2.4.0)
+  - FLEX (2.3.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
+  - RFBluetooth (0.1.0)
   - RFCommonUI (0.1.1):
     - Masonry
     - RFCommonUI/Categories (= 0.1.1)
@@ -42,20 +43,22 @@ PODS:
     - RFFoundation/Preprocessors (= 0.1.2)
   - RFFoundation/Categories (0.1.2)
   - RFFoundation/Preprocessors (0.1.2)
+  - RFFoundation/Utils (0.1.2)
   - RFTypeface (0.2.1):
     - RFFoundation
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - SDWebImage (5.2.3):
+    - SDWebImage/Core (= 5.2.3)
+  - SDWebImage/Core (5.2.3)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
-  - FLEX
+  - FLEX (from `/Users/roger/github/FLEX`)
   - Masonry
   - MBProgressHUD
+  - RFBluetooth (from `/Users/roger/github/RFBluetooth`)
   - RFCommonUI
-  - RFFoundation
+  - "RFFoundation (from `git@gitee.com:Geph0rce/RFFoundation.git`)"
   - RFTypeface
   - SDWebImage
   - YYModel
@@ -63,23 +66,31 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   FLEX:
     :path: "/Users/roger/github/FLEX"
+  RFBluetooth:
+    :path: "/Users/roger/github/RFBluetooth"
+  RFFoundation:
+    :git: "git@gitee.com:Geph0rce/RFFoundation.git"
 
-CHECKOUT OPTIONS: 
+CHECKOUT OPTIONS:
+  RFFoundation:
+    :commit: 6e48ae96e1130b8862a9a87ff043eb6da6c426c6
+    :git: "git@gitee.com:Geph0rce/RFFoundation.git"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  FLEX: d3b5052e0259adba88e86135fc4b37f33008d2b5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  RFBluetooth: a8fd3633bd765e50a22a5863f8bccdd9914eec5a
   RFCommonUI: 78d86d68ed1cdb3646c9e00645da70eecc891e10
-  RFFoundation: b30559f8d2320a12fdba81fce010f05defd65543
+  RFFoundation: 4b7886bd87a7b3a598c4c3dc7c1b19ca07bd6e20
   RFTypeface: 99ebf839ac59bbe6bf94fa7a8a69c3fd6a0a487e
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 COCOAPODS: 1.5.3
 
-PODFILE CHECKSUM: c4e1561be7eea57de07b7eb2adb63e8ee178a5c0
+PODFILE CHECKSUM: 48d4abd8f9ec1b1979416064afbd0a457fcc93f9
 
 SPEC REPOS:
   https://gitee.com/Geph0rce/specs.git:
@@ -91,5 +102,4 @@ SPEC REPOS:
     - SDWebImage
     - YYModel
   https://github.com/Geph0rce/specs.git:
-    - RFFoundation
     - RFTypeface

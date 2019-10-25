@@ -15,9 +15,9 @@ target 'demo' do
   pod 'YYModel'
   pod 'SDWebImage'
   pod 'RFTypeface'
-  pod 'RFFoundation'
   pod 'RFCommonUI'
   pod 'FLEX'
   pod 'MBProgressHUD'
-
+  pod 'RFBluetooth', :git => "git@gitee.com:Geph0rce/RFBluetooth.git"
+  pod 'RFFoundation', :git => "git@gitee.com:Geph0rce/RFFoundation.git"
 end
