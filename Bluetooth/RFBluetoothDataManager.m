@@ -77,12 +77,28 @@
     self.didReceivePackage = completion;
     self.package = [[RFCurrentPackage alloc] init];
     NSString *cmd = @"EAD10104FF03F8F5";
+    NSData *data = [self dataWithHexString:cmd];
+    DLog(@"%@", data);
+    if (self.bluetooth.peripheral && self.writeCharacteristic) {
+        [self.bluetooth write:data charateristic:self.writeCharacteristic];
+    } else {
+        NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:-1 userInfo:@{ @"msg" : @"bluetooth error" }];
+        !completion ?: completion(self, nil, error);
+    }
 }
 
 - (void)requestBatteryPowerData:(RFBluetoothDataManagerPackageBlock)completion {
     self.didReceivePackage = completion;
     self.package = [[RFBatteryPowerPackage alloc] init];
     NSString *cmd = @"EAD10104FF04FFF5";
+    NSData *data = [self dataWithHexString:cmd];
+    DLog(@"%@", data);
+    if (self.bluetooth.peripheral && self.writeCharacteristic) {
+        [self.bluetooth write:data charateristic:self.writeCharacteristic];
+    } else {
+        NSError *error = [NSError errorWithDomain:NSCocoaErrorDomain code:-1 userInfo:@{ @"msg" : @"bluetooth error" }];
+        !completion ?: completion(self, nil, error);
+    }
 }
 
 #pragma mark - Utils
@@ -162,7 +178,7 @@
         _observer.didUpdateValue = ^(CBPeripheral * _Nonnull peripheral, CBCharacteristic * _Nonnull characteristic, NSError * _Nonnull error) {
             strongify(self);
             [self.package appendData:characteristic.value];
-            
+             DLog(@"characteristic.value: %@", characteristic.value);
             if (self.package.valid) {
                 DLog(@"receive package: %@", self.package.rawData);
                 [self.package parserData];

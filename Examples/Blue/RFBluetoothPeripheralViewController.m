@@ -45,7 +45,10 @@
         weakify(self);
         [_voltageButton handleTouchUpInsideWithBlock:^{
             strongify(self);
-            [self.manager requestVoltageData:^(RFBluetoothDataManager * _Nonnull manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error) {
+//            [self.manager requestVoltageData:^(RFBluetoothDataManager * _Nonnull manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error) {
+//
+//            }];
+            [self.manager requestCurrentData:^(RFBluetoothDataManager * _Nonnull manager, __kindof RFBluetoothPackage * _Nullable package, NSError * _Nullable error) {
                 
             }];
         }];
