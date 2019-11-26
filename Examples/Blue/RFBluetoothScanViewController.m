@@ -82,9 +82,11 @@
     [self.manager connect:peripheral completion:^(RFBluetoothDataManager * _Nonnull manager, BOOL success) {
         strongify(self);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        RFBluetoothPeripheralViewController *controller = [[RFBluetoothPeripheralViewController alloc] init];
-        controller.manager = self.manager;
-        [self.navigationController pushViewController:controller animated:YES];
+        if (success) {
+            RFBluetoothPeripheralViewController *controller = [[RFBluetoothPeripheralViewController alloc] init];
+            controller.manager = self.manager;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
     }];
 }
 
@@ -133,6 +135,7 @@
 - (RFBluetoothDataManager *)manager {
     if (!_manager) {
         _manager = [[RFBluetoothDataManager alloc] init];
+        _manager.config = [RFBluetoothConfig debugConfig];
     }
     return _manager;
 }
