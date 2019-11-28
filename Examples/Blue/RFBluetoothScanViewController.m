@@ -135,7 +135,9 @@
 - (RFBluetoothDataManager *)manager {
     if (!_manager) {
         _manager = [[RFBluetoothDataManager alloc] init];
-        _manager.config = [RFBluetoothConfig debugConfig];
+        RFBluetoothConfig *config = [RFBluetoothConfig debugConfig];
+        config.mockModeEnabled = YES;
+        _manager.config = config;
     }
     return _manager;
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02FC19F6CAFC1A0468CA15A0 /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4413231D35841972B2D3FE /* libPods-demo.a */; };
 		162AD98E201583BF0020B15B /* UIColor+RT.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AD98C201583BF0020B15B /* UIColor+RT.m */; };
 		162AD98F201583BF0020B15B /* UIFont+RT.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AD98D201583BF0020B15B /* UIFont+RT.m */; };
 		162AD992201584030020B15B /* CollectionViewExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AD991201584030020B15B /* CollectionViewExampleViewController.m */; };
@@ -40,10 +41,8 @@
 		18B5CAF81EC73869008BBA18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAF71EC73869008BBA18 /* main.m */; };
 		18B5CAFB1EC73869008BBA18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CAFA1EC73869008BBA18 /* AppDelegate.m */; };
 		18B5CB031EC73869008BBA18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CB021EC73869008BBA18 /* Assets.xcassets */; };
-		CAFAAC2D0A5E8D7F256317BB /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */; };
 		DB42038A205B390500A7E25E /* DemoHitTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB420389205B390500A7E25E /* DemoHitTestView.m */; };
 		DB6689A92050207700497BAF /* DCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6689A82050207700497BAF /* DCollectionViewController.m */; };
-		DB6B902A20E3020A000720D2 /* demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6B902920E3020A000720D2 /* demo.swift */; };
 		DB71705420502C4E00B194E2 /* DCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB71705320502C4E00B194E2 /* DCollectionViewCell.m */; };
 		DB7777382319744200E68C3B /* RFBluetoothPeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7777372319744200E68C3B /* RFBluetoothPeripheralViewController.m */; };
 		DBADD6362312CA6B00F544AF /* RFBluetoothScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBADD6352312CA6B00F544AF /* RFBluetoothScanViewController.m */; };
@@ -136,14 +135,12 @@
 		18B5CAFA1EC73869008BBA18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18B5CB021EC73869008BBA18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18B5CB071EC73869008BBA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3942A1DDF1D68C508C870464 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
+		AA4413231D35841972B2D3FE /* libPods-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB420388205B390500A7E25E /* DemoHitTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoHitTestView.h; sourceTree = "<group>"; };
 		DB420389205B390500A7E25E /* DemoHitTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoHitTestView.m; sourceTree = "<group>"; };
 		DB6689A72050207700497BAF /* DCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCollectionViewController.h; sourceTree = "<group>"; };
 		DB6689A82050207700497BAF /* DCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCollectionViewController.m; sourceTree = "<group>"; };
-		DB6B902820E30209000720D2 /* demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
-		DB6B902920E3020A000720D2 /* demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo.swift; sourceTree = "<group>"; };
 		DB71705220502C4E00B194E2 /* DCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCollectionViewCell.h; sourceTree = "<group>"; };
 		DB71705320502C4E00B194E2 /* DCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCollectionViewCell.m; sourceTree = "<group>"; };
 		DB7777362319744200E68C3B /* RFBluetoothPeripheralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFBluetoothPeripheralViewController.h; sourceTree = "<group>"; };
@@ -158,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAFAAC2D0A5E8D7F256317BB /* Pods_demo.framework in Frameworks */,
+				02FC19F6CAFC1A0468CA15A0 /* libPods-demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +327,6 @@
 			children = (
 				168A0DE02015C0680020A8C0 /* AIFMasonryMacro.h */,
 				168A0DE12015C0680020A8C0 /* AIFMasonryMacro.m */,
-				DB6B902920E3020A000720D2 /* demo.swift */,
-				DB6B902820E30209000720D2 /* demo-Bridging-Header.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -392,7 +387,7 @@
 		617B2CDD7251719EFD74A6B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26C78FAC7D2F65CF3AC4FA31 /* Pods_demo.framework */,
+				AA4413231D35841972B2D3FE /* libPods-demo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -430,7 +425,6 @@
 				18B5CAEF1EC73869008BBA18 /* Sources */,
 				18B5CAF01EC73869008BBA18 /* Frameworks */,
 				18B5CAF11EC73869008BBA18 /* Resources */,
-				4C5A5723D7B09FC21DA1DA3E /* [CP] Embed Pods Frameworks */,
 				16D1F1052043EEE000A51709 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -502,42 +496,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4C5A5723D7B09FC21DA1DA3E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/RFBluetooth/RFBluetooth.framework",
-				"${BUILT_PRODUCTS_DIR}/RFCommonUI/RFCommonUI.framework",
-				"${BUILT_PRODUCTS_DIR}/RFFoundation/RFFoundation.framework",
-				"${BUILT_PRODUCTS_DIR}/RFTypeface/RFTypeface.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFBluetooth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFCommonUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFFoundation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RFTypeface.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demo/Pods-demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		56794ACF60B4697D0D1FC1CC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -585,7 +543,6 @@
 				162AD995201584330020B15B /* AJKPeopleTagCell.m in Sources */,
 				16FB95751FF5E946002866C9 /* NetworkExampleViewController.m in Sources */,
 				162AD992201584030020B15B /* CollectionViewExampleViewController.m in Sources */,
-				DB6B902A20E3020A000720D2 /* demo.swift in Sources */,
 				16FB95681FF33E3A002866C9 /* RFClientInfo.m in Sources */,
 				1631D7D52110471F007FCFC4 /* RFPhotoCollectionViewCell.m in Sources */,
 				167F4E501FE7D7820020C394 /* UIViewController+RFNetworking.m in Sources */,

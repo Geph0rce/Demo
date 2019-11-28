@@ -73,6 +73,8 @@ EXTERNAL SOURCES:
   RFFoundation:
     :path: "/Users/roger/github/RFFoundation"
 
+CHECKOUT OPTIONS: 
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FLEX: d3b5052e0259adba88e86135fc4b37f33008d2b5
@@ -87,7 +89,7 @@ SPEC CHECKSUMS:
 
 COCOAPODS: 1.5.3
 
-PODFILE CHECKSUM: 48d4abd8f9ec1b1979416064afbd0a457fcc93f9
+PODFILE CHECKSUM: 4c69176d7b7e671dc2f918e162ef0a25a66a94d3
 
 SPEC REPOS:
   https://gitee.com/Geph0rce/specs.git:
